@@ -1,0 +1,416 @@
+:root{
+  --bg-color: black;
+
+  /*Nav Bar*/
+  --hnav: 80px;
+  --bg-nav: #0769e9;
+
+  /*Menu Lateral*/
+  --width: 200px;
+  --padding: 10px;
+  --bag-color: rgba(41, 105, 164, 1);
+  --hover-color: #111;
+  --width-collapsed: 50px;
+}
+
+* {
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: sans-serif;
+  padding: 90px 20px 0;
+  background-color: var(--bg-color);
+}
+
+.body-expanded{
+  margin-left: var(--width);
+}
+
+/*------------------------NAV------------------------*/
+.header {
+  background-color: var(--bg-nav);
+  height: var(--hnav);
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+}
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+
+  max-width: 992px;
+  margin: 0 auto;
+}
+
+.nav-link {
+  color: white;
+  text-decoration: none;
+}
+
+.logo {
+  font-size: 30px;
+  font-weight: bold;
+  padding: 0 40px;
+  line-height: 80px;
+}
+
+.nav-menu {
+  display: flex;
+  margin-right: 40px;
+  list-style: none;
+}
+
+.nav-menu-item {
+  font-size: 18px;
+  margin: 0 10px;
+  line-height: 80px;
+  text-transform: uppercase;
+  width: max-content;
+}
+
+.nav-menu-link {
+  padding: 8px 12px;
+  border-radius: 3px;
+}
+
+.nav-menu-link:hover,
+.nav-menu-link_active {
+  background-color: #034574;
+  transition: 0.5s;
+}
+
+/*------------------------ TOGGLE ------------------------*/
+.nav-toggle {
+  color: white;
+  background: none;
+  border: none;
+  font-size: 30px;
+  padding: 0 20px;
+  line-height: 60px;
+  cursor: pointer;
+
+  display: none;
+}
+
+
+/*------------------------ MENÚ LATERAL DESPLEGABLE ------------------------*/
+#sidemenu{
+  background-color: var(--bag-color);
+  color: white;
+  position: fixed;
+  height: calc(100% - var(--hnav));
+  left: 0;
+  bottom: 0;
+  align-items: center;
+  justify-content: center;
+}
+
+/*... Menu Button ...*/
+#sidemenu #header #menu-btn:hover{
+  background-color: var(--hover-color);
+}
+
+#sidemenu #header #menu-btn .btn-hamburger{
+  background-color: #fff;
+  width: 30px;
+  height: 2px;
+  margin: 5px 0;
+}
+
+
+/* ... PROFILE ...*/
+#sidemenu #profile{
+  border-bottom: solid 1px var(--hover-color);
+  padding: var(--padding);
+  text-align: center;
+}
+
+#sidemenu #profile #photo{ /*Div imagen perfil*/
+  box-sizing: border-box;
+  padding: 5px;
+  margin: 0 auto;
+}
+
+#sidemenu #profile #photo img{ /*Imagen de Perfil*/
+  border-radius: 50%;
+  width: 100%;
+}
+
+#sidemenu #profile #photo, #sidemenu #profile #name{
+  font-size: 20px;
+  padding: var(--padding) 0;
+  overflow: hidden;
+}
+
+/*... ITEMS ...*/
+#sidemenu #menu-items{
+  overflow: hidden;
+}
+
+#sidemenu #menu-items .item{
+  width: var(--width);
+}
+
+#sidemenu #menu-items .item .icon{
+  display: inline-block;
+  box-sizing: border-box;
+  padding: var(--padding);
+  width: var(--width-collapsed);
+}
+
+#sidemenu #menu-items .item .icon img{
+  width: 100%;
+}
+
+#sidemenu #menu-items .item .icon,
+#sidemenu #menu-items .item .title{
+  font-size: 14px;
+  vertical-align: middle;
+  overflow: hidden;
+  display: inline-block;
+}
+
+#sidemenu #menu-items .item a{
+  display: block;
+  text-decoration: none;
+
+}
+
+#sidemenu #menu-items .item a:hover{
+  background-color: var(--hover-color);
+}
+
+#sidemenu #menu-items .item.close {
+  display: inline-block;
+  vertical-align: middle;
+  bottom: 0px;
+  position: absolute;
+  padding: var(--padding) 0;
+  justify-content: center;
+  align-items: center;
+}
+
+
+#sidemenu #menu-items .item .icon img{
+  width: 100%;
+}
+
+#sidemenu #menu-items .item .title{
+  padding: var(--padding) 0;
+}
+
+#sidemenu #menu-items .item.separator{
+  height: 1px;
+  border-bottom: solid 1px var(--hover-color);
+  margin: 5px 0;
+}
+
+/*Links*/
+#sidemenu a{
+  color: white;
+}
+
+/*Botón Menú*/
+#sidemenu #header #menu-btn{
+  display: inline-block;
+  cursor: pointer;
+  padding: 10px;
+  width: var(--width-colap);
+  box-sizing: border-box;
+}
+
+/* --------------- MENU EXPANDED --------------- */
+
+.menu-expanded{
+  width: var(--width);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.menu-expanded #header{
+  display:flex;
+  justify-content: space-between;
+  align-items:center;
+  padding: 5px;
+}
+
+.menu-expanded #header #title{
+  width: calc(100%-50px);
+  margin-right: 5px;
+  padding: var(--padding);
+  justify-content: center;
+}
+
+.menu-expanded #header #title span{
+  width: calc(var(--width) - var(--width-collapsed) - 5px);
+  overflow: hidden;
+}
+
+.menu-expanded #profile #photo{
+  width: 110px;
+}
+
+.menu-expanded #profile #name{
+  width: 100%;
+}
+
+.menu-collapsed{
+  width: var(--width-collapsed);
+}
+
+.menu-collapsed #title{
+  display: none;
+}
+
+.menu-collapsed #menu-items .item.close a{
+  display:none;
+  width: 0;
+  height: 0;
+  padding: 0;
+  margin: 0;
+}
+
+.menu-collapsed #header #title{
+  width: 0;
+  height: 0;
+  padding: 0;
+  margin: 0;
+}
+
+.menu-collapsed #profile #name{
+  display: none;
+}
+
+.menu-collapsed .item{
+  width: 100px;
+}
+/*FIN MENÚ LATERAL DESPLEGABLE*/
+
+
+
+/*ESTILOS DEL CUERPO*/
+
+
+.cont-pizarra{
+  margin:0 40%;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.animation1{
+  overflow: hidden;
+  margin: auto auto;
+  height: 100%;
+  width: calc();
+
+}
+
+.pizarra{
+  width: 500px;
+  height: 500px;
+}
+
+#lbl{
+  display: flex;
+  font-family: 'Special Elite', cursive;
+  font-style: normal;
+  line-height: 88px;
+  font-size: 40px;
+  position: absolute;
+  top:37%;
+  margin: auto;
+}
+
+#lbl_usr{
+  display: flex;
+  font-family: 'Special Elite', cursive;
+  font-style: normal;
+  line-height: 88px;
+  font-size: 30px;
+  position: absolute;
+  top:40% ;
+  margin: 30px;
+}
+
+.animation2{
+  color: white;
+}
+
+
+
+
+/*LEvantar el welcome y edspues poner el nombre de usuario*/
+
+
+
+
+
+/*
+transition-properity
+transition-duration
+transition-delay:
+*/
+
+/*
+ MOBILE 
+@media (max-width: 768px) {
+  body {
+    padding-top: 70px;
+  }
+
+  .header {
+    height: 60px;
+  }
+
+  .logo {
+    font-size: 25px;
+    padding: 0 20px;
+    line-height: 60px;
+  }
+
+  .nav-menu {
+    flex-direction: column;
+    align-items: center;
+    margin: 0;
+    background-color: #2c3e50;
+    position: fixed;
+    top: 60px;
+    width: 100%;
+    padding: 20px 0;
+
+    height: calc(100% - 60px);
+    overflow-y: auto;
+
+    left: 100%;
+    transition: left 0.3s;
+  }
+
+  .nav-menu-item {
+    line-height: 70px;
+  }
+
+  .nav-menu-link:hover,
+  .nav-menu-link_active {
+    background: none;
+    color: #83c5f7;
+  }
+
+  .nav-toggle {
+    display: block;
+  }
+
+  .nav-menu_visible {
+    left: 0;
+  }
+
+  .nav-toggle:focus:not(:focus-visible) {
+    outline: none;
+  }
+}
+FIN NAV RESPONSIVE
+*/

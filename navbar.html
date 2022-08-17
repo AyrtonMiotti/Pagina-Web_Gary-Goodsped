@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Navbar</title>
+
+    <link rel="stylesheet" href="style.css" />
+    <script
+      src="https://kit.fontawesome.com/7e5b2d153f.js"
+      crossorigin="anonymous"
+    ></script>
+    <script defer src="main.js"></script>
+  </head>
+  <body>
+    <header class="header">
+      <nav class="nav">
+        <a href="#" class="logo nav-link">Logo</a>
+        <button class="nav-toggle" aria-label="Abrir menú">
+          <i class="fas fa-bars"></i>
+        </button>
+        <ul class="nav-menu">
+          <li class="nav-menu-item">
+            <a href="#" class="nav-menu-link nav-link">Inicio</a>
+          </li>
+          <li class="nav-menu-item">
+            <a href="#" class="nav-menu-link nav-link">Autogestión</a>
+          </li>
+          <li class="nav-menu-item">
+            <a href="#" class="nav-menu-link nav-link">Sobre nosotros</a>
+          </li>
+          <li class="nav-menu-item">
+            <a href="#" class="nav-menu-link nav-link nav-menu-link_active"
+              >Contactanos</a
+            >
+          </li>
+        </ul>
+      </nav>
+    </header>
+    <!- Fin del Header ->
+
+    <div id="sidemenu" class="menu-collapsed">
+      <!- Header ->
+      <div id="header">
+        <div id="title"><span>Gary Goodsped</span></div>
+        <div id="menu-btn">
+          <div class="btn-hamburger"></div>
+          <div class="btn-hamburger"></div>
+          <div class="btn-hamburger"></div>
+        </div>
+      </div>
+  
+      <!- PERFIL ->
+      <div id="profile">
+        <div id="photo"><img src="ayrton.png" alt="Usuario"></div>
+        <div id="name"><span>Ayrton</span></div>
+      </div>
+
+      <!- ITEMS ->
+      <div id="menu-items">
+        <div class="item">
+          <a href="#">
+            <div class="icon">
+              <img src="trabajo-en-equipo.png" alt="">
+            </div>
+            <div class="title">
+              <span>Profesores</span>
+            </div>
+          </a>
+        </div>
+
+        <div class="item separator"></div>
+
+        <div class="item">
+          <a href="">
+            <div class="icon">
+              <img src="" alt="">
+            </div>
+            <div class="title">
+              <span>Nombre del icono</span>
+            </div>
+          </a>
+        </div>
+      </div>
+  </div>
+  <!- Fin Menú Lateral Desplegable ->
+
+
+
+
+
+
+  <script src="main.js"></script>
+  </body>
+</html>

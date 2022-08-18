@@ -38,5 +38,5 @@ app.listen(3306, (req, res)=>{
 }) 
 
 
-//npm ia
+//npm i
 //npm init

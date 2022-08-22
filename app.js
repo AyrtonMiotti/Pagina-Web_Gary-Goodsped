@@ -33,8 +33,12 @@ app.use(session({
 // 8 - Llamamos al módulo de conexión a la BD
 const connection = require('./Database/db'); 
 
-app.listen(3306, (req, res)=>{
-    console.log("SERVER RUNNING IN https://localhost:3306");
+app.get('/', (req, res)=>{
+    res.send("Hola Mundo");
+})
+
+app.listen(3307, (req, res)=>{
+    console.log("SERVER RUNNING IN https://localhost:3307");
 }) 
 
 

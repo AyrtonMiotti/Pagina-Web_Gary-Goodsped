@@ -1,0 +1,210 @@
+body {
+  font-family: 'Hanuman', serif;
+  background: url("resources/Assets/Fondo1.jpg"); 
+  background-size: cover;
+  background-attachment: fixed;
+  height: 100vh; 
+}
+
+/* Contenedor donde se encuentra toda la página)*/
+.login-design {
+  justify-content: center;
+}
+
+/* Clase Login donde se encuentra casi todo*/
+.login {
+  display: flex;
+  justify-content: center;
+  align-items: center;  
+}
+
+/* Clase donde se encuentran todos los elementos*/
+.login-data {
+  justify-content: center;
+  height: 500px;
+  margin-top: 6%;
+  background: rgba(2, 14, 24, 1);;
+  align-items: center;
+  text-align: center;
+  width: 30%;
+  border-radius: 15px;
+}
+
+/* Título donde ponemos "Inicio de Sesión" */
+.login-data h1 {
+  font-weight: 200;
+}
+
+/* Estilos del Logo*/
+.logo{
+  padding-bottom: 3%;
+}
+
+/* Configuración de Inputs (usr y password) */
+.input-group {
+  position: relative;
+  align-items: center;
+  width: 80%;
+  margin: 0 auto;
+  margin-bottom: 1.5rem;
+  padding-right: 5%;
+}
+
+.icon{
+  margin-left: 5px;
+}
+
+.input-fill input {
+  border: none;
+  border-bottom: 3px solid #848f9a;
+  background-color: #E5EFFF;
+  width: 100%;
+  height: 2rem;
+  font-size: 1.0625rem;
+  padding-left: 2rem;
+  line-height: 147.6%;
+  padding-top: 1rem;
+  padding-bottom: 0.5rem;
+  margin-left: 0px;
+  border-radius: 10px;
+}
+
+.input-fill input:focus {
+  outline: none;
+  border-color: #6c1aef;
+}
+
+.input-fill input:hover {
+  background-color: #c5c9d3;
+}
+
+.input-fill input:focus + .input-label {
+  top: 0;
+  margin-bottom: 2rem;
+  color: #6c1aef;
+}
+
+.input-fill input:focus ~ i {
+  color: #6c1aef;
+}
+
+.input-fill .input-label {
+  position: absolute;
+  top: 5px;
+  left: 35px;
+  line-height: 147.6%;
+  color: #848f9a;
+  transition: top 0.2s;
+  font-weight: 700;
+}
+
+.input-fill i {
+  position: absolute;
+  top: 19px;
+  left: 0;
+  color: #848f9a;
+  font-size: 1.5rem;
+}
+
+/* Icono de ojo para ver/ocultar contraseña */
+.eye{
+  position: absolute;
+  right: 0;
+  color: black;
+  padding-right: 6%;
+}
+.input-fill .eye {
+  position: absolute;
+  top: 2px;
+  right: 0;
+  bottom: 80%;
+  line-height: 147.6%;
+  color: #848f9a;
+  transition: top 0.2s;
+  font-weight: 700;
+}
+.eye:hover{
+  cursor: pointer;
+  color: black;
+}
+
+/* Contenedor olvidó su contraseña */
+.login-form a {
+  display: block;
+  width: 95%;
+  text-align: right;
+  text-decoration: none;
+  color: #808080; /*Color gris:  #848f9a*/
+  margin-bottom: 1.3rem;
+  font-weight: 800;
+  transition: 0.3s ease-in-out all;
+  font-size: 18px;
+}
+.login-form a:hover {
+  color: #6c1aef;
+}
+
+/* Formulario*/
+.login-form{
+  padding-left: 0px;
+}
+
+/* Label usuario o contra incorrectos */
+.login-form .error-label {
+  font-weight: 50;
+  right: 20%;
+  margin-top: 0px;
+  text-align: center;
+  color: transparent;
+  font-weight: 100;
+}
+
+/* Botón de "Crear Cuenta"*/
+.newac{
+  display: block;
+  margin-top: 15px;
+  right: 14%;
+}
+
+/*Contenedor que tiene al checkbox y al botón*/
+.footer{
+  width: 100%;
+  display: flex;
+  float: right;
+  align-items: center;
+  
+}
+
+/*Estilo del checkbox*/
+.check_r{
+  position: relative;
+  align-items: center;
+  left: 12%;
+  font-size: 20px;
+}
+
+/* Botón Iniciar Sesión*/
+.btn-login {
+  display: block;
+  position: relative;
+  border-radius: 10px;
+  width: 32%;
+  border: 1px solid #6c1aef;
+  line-height: 1.6rem;
+  font-size: 1.3rem;
+  background-color: black;
+  color: #ffffff;
+  padding: 0.5rem 0;
+  transition: 0.3s ease-in-out all;
+  font-weight: 500;
+  margin-top: 10px;
+  margin-bottom: 1%;
+  left: 35%;
+}
+.btn-login:hover {
+  cursor: pointer;
+  background-color: #6c1aef;
+  color: black;
+}
+
+

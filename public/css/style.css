@@ -3,13 +3,13 @@
 
   /*Nav Bar*/
   --hnav: 80px;
-  --bg-nav: #0769e9;
+  --bg-nav: rgba(2, 14, 24, 1);
 
   /*Menu Lateral*/
   --width: 200px;
   --padding: 10px;
   --bag-color: rgba(2, 14, 24, 1);
-  --hover-color: #111;
+  --hover-color: #444;
   --width-collapsed: 50px;
 }
 

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link rel="icon" href="hermes.ico" class="rel">
+    <link
+      href="https://fonts.googleapis.com/css2?family=Dosis:wght@200;500;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.15.1/css/all.css"
+      integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="resources/css/main.css">
+    <link rel="stylesheet" href="resources/css/normalize.css" />
+    <title>Login</title>
+  </head>
+  <body>
+    <main class="login-design">
+      <div class="login">
+        <div class="login-data">
+          <h1>Bienvenido</h1>
+          <img src="resources/Assets/GG-corto.png" alt="" height="10%" width="10%" class="logo"/>
+
+          <form action=none class="form-login">
+            <div class="login-form">
+              <div class="input-group">
+                  <label class="input-fill">
+                  <input type="usr" name="usr" id="usr" required />
+                  <span class="input-label">Usuario</span>
+                  <i class="fas fa-envelope icon"></i>
+                  </label>
+              </div>
+              <div class="input-group">
+                <label class="input-fill">
+                  <span class="eye"><i id="eye" class="fas fa-eye-slash" ></i></span>
+                  <input type="password" name="password" id="password" required />
+                  <span class="input-label">Contraseña</span>
+                  <i class="fas fa-lock icon"></i>
+                </label>
+              </div>
+              <div class="error">
+              <span class="error-label" id="error-label">Usuario o Contraseña incorrectos</span>
+              </div>
+                <a class="newac" href="#">¿Olvidaste la contraseña?</a>
+              <br>
+              <div class="footer">
+                <div class="check_r" id="check_r">
+                  <input type="checkbox" id="remember"><label for="remember"> Recordarme</label>
+                </div>
+                <input type="button" value="Ingresar" class="btn-login"/>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </main>
+    <script src="resources/index_login.js"></script>
+    <script src="resources/validar.js"></script>
+  </body>
+</html>

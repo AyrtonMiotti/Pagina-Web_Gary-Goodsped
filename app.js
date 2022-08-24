@@ -33,11 +33,49 @@ app.use(session({
 // 8 - Llamamos al módulo de conexión a la BD
 const connection = require('./Database/db'); 
 
+
+// 9 - Estableciendo las rutas
 app.get('/', (req, res)=>{
-    res.send("Hola Mundo");
+    res.render('home');
 })
 
+app.get('/login', (req, res)=>{
+    res.render('login');
+})
+
+app.get('/student_home', (req, res)=>{
+    res.render('student_home');
+})
+
+app.get('/teacher_home', (req, res)=>{
+    res.render('teacher_home');
+})
+
+
+// 10 - Registro de Usuarios (No lo vamos a usar)
+app.post('/register', async (req, res)=>{
+    const user = req.body.user;
+    const name = req.body.name;
+    const rol = req.body.rol;
+    const pass = req.body.pass;
+    let passwordHaash = await bcryptjs.hash(pass, 8);
+    connection.query('INSERT INTO USERS SET ?', {user:user, name:name, rol:rol, pass:passwordHaash}, async(error, results)=>{
+        if(error){
+            console.log('Hubo un error al hacer la consulta.');
+            console.log('ERROR: ' + error);
+        }
+        console.log('Alta exitosa');
+    })
+})
+
+// el '/register' y el '/auth' son lo que se pone en <form action= '*Acá*' method = "Post"
+// las variables req.body.blablabla son las que cuando declaramos los inputs ponemos: name= ''
+
+// 11 - Autenticación
+
 app.listen(3307, (req, res)=>{
+    console.log("");
+    console.log("-------------------------------------------");
     console.log("SERVER RUNNING IN https://localhost:3307");
 }) 
 

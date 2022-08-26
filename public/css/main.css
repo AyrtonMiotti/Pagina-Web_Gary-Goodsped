@@ -1,9 +1,17 @@
 body {
   font-family: 'Hanuman', serif;
-  background: url("resources/Assets/Fondo1.jpg"); 
+  background-color: #0b0d2d;
+  /*background: url("resources/Assets/Fondo1.jpg"); */
   background-size: cover;
   background-attachment: fixed;
   height: 100vh; 
+}
+
+.particles-js{
+  height: 100vh;
+  width: 100%;
+  position: fixed;
+  z-index: -1;
 }
 
 /* Contenedor donde se encuentra toda la página)*/
@@ -16,13 +24,15 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;  
+  margin: 0;
 }
 
 /* Clase donde se encuentran todos los elementos*/
 .login-data {
+  position: absolute;
+  top: 12%;
   justify-content: center;
   height: 500px;
-  margin-top: 6%;
   background: rgba(2, 14, 24, 1);;
   align-items: center;
   text-align: center;
@@ -30,9 +40,14 @@ body {
   border-radius: 15px;
 }
 
+
+
 /* Título donde ponemos "Inicio de Sesión" */
 .login-data h1 {
   font-weight: 200;
+  padding: 0;
+  color: white;
+  margin-bottom: 10px;
 }
 
 /* Estilos del Logo*/
@@ -207,4 +222,6 @@ body {
   color: black;
 }
 
-
+.remember{
+  color:white;
+}

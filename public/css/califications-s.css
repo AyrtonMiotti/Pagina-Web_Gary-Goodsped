@@ -1,0 +1,38 @@
+:root{
+    --bg-Columna: #186EBC;
+    --bg-Fila: #062b4f;
+    --bg-notasPar: #82a9cc;
+    --bg-notasImpar: #cfdbe6;
+}
+body{
+    font-size: 2,5rem;
+}
+
+table{
+    border: 1px solid black;
+    border-collapse: collapse;
+    margin: auto;
+}
+
+td{
+    text-align: center;
+    padding: 1rem;
+    border: 1px solid black;
+}
+
+thead{
+    background-color: var(--bg-Fila);
+    color: white;
+}
+
+tbody td:first-child{
+    background-color: var(--bg-Columna);
+}
+
+tbody tr:nth-child(2n){
+    background-color: var(--bg-notasPar);
+}
+
+tbody tr:nth-child(2n+1){
+    background-color: var(--bg-notasImpar);
+}

@@ -51,6 +51,13 @@ app.get('/teacher_home', (req, res)=>{
     res.render('teacher_home');
 })
 
+app.get('/navlist', (req, res)=>{
+    res.render('navlist');
+})
+
+app.get('/Calificaciones', (req, res)=>{
+    res.render('califications')
+})
 
 // 10 - Registro de Usuarios (No lo vamos a usar)
 app.post('/register', async (req, res)=>{

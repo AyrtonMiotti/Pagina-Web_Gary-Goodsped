@@ -127,7 +127,13 @@ body {
   right: 0;
   color: black;
   padding-right: 6%;
+  top: 14px;
 }
+
+#eye{
+  top: 15px;
+}
+
 .input-fill .eye {
   position: absolute;
   top: 2px;
@@ -142,6 +148,7 @@ body {
   cursor: pointer;
   color: black;
 }
+
 
 /* Contenedor olvidó su contraseña */
 .login-form a {
@@ -218,8 +225,11 @@ body {
 }
 .btn-login:hover {
   cursor: pointer;
-  background-color: #6c1aef;
-  color: black;
+  background: #a945c7;
+  box-shadow: 0 0 10px #a945c7,
+   0 0 30px #6c1aef,
+   0 0 80px #6c1aef;
+  transition-delay: .1s;
 }
 
 .remember{

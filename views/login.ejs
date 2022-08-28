@@ -53,16 +53,30 @@
                 <div class="check_r" id="check_r">
                   <input type="checkbox" id="remember"><label class="remember" for="remember"> Recordarme</label>
                 </div>
-                <input type="button" value="Ingresar" class="btn-login"/>
+                <input type="submit" value="Ingresar" class="btn-login"/>
               </div>
             </div>
           </form>
         </div>
       </div>
     </main>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="resources/particles.js"></script>
     <script src="resources/index_login.js"></script>
     <script src="resources/validar.js"></script>
-    
+
+    <% if(typeof alert != "undefined") { %>
+      <script>
+        Swal.fire({
+          title: '<%= alertTitle %>',
+          text: '<%= alertMessage %>',
+          icon: '<%= alertIcon %>',
+          showConfirmButton: '<=% showConfirmButton%>',
+          timer: '<%= timer %>'
+        }).then(()=>{
+          window.location='/<%=ruta %>'
+        })
+      </script>
+      <% } %>
   </body>
 </html>

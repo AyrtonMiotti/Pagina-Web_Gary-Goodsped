@@ -36,12 +36,9 @@ const connection = require('./Database/db');
 
 // 9 - Estableciendo las rutas
 app.get('/', (req, res)=>{
-    res.render('home');
-})
-
-app.get('/login', (req, res)=>{
     res.render('login');
 })
+
 
 app.get('/student_home', (req, res)=>{
     res.render('student_home');
@@ -55,8 +52,12 @@ app.get('/navlist', (req, res)=>{
     res.render('navlist');
 })
 
-app.get('/Calificaciones', (req, res)=>{
+app.get('/califications', (req, res)=>{
     res.render('califications')
+})
+
+app.get('/home', (req, res)=>{
+    res.render('home')
 })
 
 // 10 - Registro de Usuarios (No lo vamos a usar)
@@ -75,10 +76,70 @@ app.post('/register', async (req, res)=>{
     })
 })
 
-// el '/register' y el '/auth' son lo que se pone en <form action= '*Acá*' method = "Post"
-// las variables req.body.blablabla son las que cuando declaramos los inputs ponemos: name= ''
 
 // 11 - Autenticación
+app.post('/auth', (req, res)=>{
+    const user = req.body.usr;
+    const pass = req.body.password;
+    //let passwordHaash = await bcryptjs.hash(pass, 8);
+    console.log(user,pass);
+        connection.query('SELECT * FROM USERS WHERE name_user = ?', [user], (error, results) =>{
+            if(error){
+                console.log("El error que devolvió SQL es: " + error);
+                return;
+            }
+
+            if(pass != results[0].passwor){
+                res.render('login', {
+                    alert: true,
+                    alertTitle: "Error",
+                    alertMessage: "Usuario y/o contraseña incorrectos",
+                    alertIcon: "error",
+                    showConfirmButton: true,
+                    timer: 1200,
+                    ruta: ''
+                });
+            }
+            else{
+                // res.session.name = results[0].name; Para obtener un valor de la BD
+                if(results[0].privilege == 'student'){
+                    res.render('login', {
+                        alert: true,
+                        alertTitle: "Conexión exitosa",
+                        alertMessage: "¡Login correcto!",
+                        alertIcon: "succes",
+                        showConfirmButton: false,
+                        timer: 1500,
+                        ruta: 'student_home'
+                    });
+                }
+                if(results[0].privilege == 'teacher'){
+                    res.render('login', {
+                        alert: true,
+                        alertTitle: "Conexión exitosa",
+                        alertMessage: "¡Login correcto!",
+                        alertIcon: "succes",
+                        showConfirmButton: false,
+                        timer: 1500,
+                        ruta: 'teacher_home'
+                    });
+                }
+                if(results[0].privilege == 'admin'){
+                    res.render('login', {
+                        alert: true,
+                        alertTitle: "Conexión exitosa",
+                        alertMessage: "¡Login correcto!",
+                        alertIcon: "succes",
+                        showConfirmButton: false,
+                        timer: 1500,
+                        ruta: 'home'
+                    });
+                }
+
+            }
+        })
+});
+
 
 
 app.listen(3307, (req, res)=>{

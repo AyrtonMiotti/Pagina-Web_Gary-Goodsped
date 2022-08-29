@@ -1,0 +1,118 @@
+:root{
+  /*Nav Bar*/
+  --hnav: 80px;
+  --bg-nav: rgba(2, 14, 24, 1);
+
+  /*Página Home*/
+  /*Sección 1*/
+  --sec1-bg: #071F35;
+  --color-h1: #fff;
+
+  /*Sección 2*/
+  --sec2-bg: #182655;
+
+  /*Sección 3*/
+  --sec3-bg: #00040F;
+}
+
+.body{
+    font-family: sans-serif;
+}
+
+/*------------------------NAV------------------------*/
+.header {
+    background-color: var(--bg-nav);
+    height: var(--hnav);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+  }
+  
+  .nav {
+    display: flex;
+    justify-content: space-between;
+  
+    max-width: 992px;
+    margin: 0 auto;
+  }
+  
+  .nav-link {
+    color: white;
+    text-decoration: none;
+  }
+  
+  .logo {
+    font-size: 30px;
+    font-weight: bold;
+    padding: 0 40px;
+    line-height: 80px;
+  }
+  
+  .logo-icon{
+    width: 150px;
+    height: 50px;
+    align-items: center;
+    justify-content: center;
+    vertical-align: middle
+  }
+
+  .nav-menu {
+    display: flex;
+    margin-right: 40px;
+    list-style: none;
+    margin: 0;
+  }
+  
+  .nav-menu-item {
+    font-size: 18px;
+    margin: 0 10px;
+    line-height: 80px;
+    text-transform: uppercase;
+    width: max-content;
+  }
+  
+  .nav-menu-link {
+    padding: 8px 12px;
+    border-radius: 3px;
+  }
+  
+  .nav-menu-link:hover,
+  .nav-menu-link_active {
+    background-color: #034574;
+    transition: 0.5s;
+  }
+  
+
+/*-------------------- Página Home --------------------*/
+#sec1{
+    background-color: var(--sec1-bg);
+    height: 100vh; 
+    margin-top: var(--hnav);
+}
+
+.title{
+    margin-top: 80px;
+    vertical-align: -webkit-baseline-middle;
+}
+
+h1{
+    color: var(--color-h1);
+    text-align: center;
+
+}
+
+.img-book{
+    width: 100%;
+    border-radius: 100px;
+}
+   
+   #sec2{
+    background-color: var(--sec2-bg);
+     height: 100vh; 
+   }
+   
+   #sec3{
+    background-color: var(--sec3-bg);
+     height: 100vh; 
+   }

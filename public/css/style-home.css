@@ -94,20 +94,21 @@
 }
 
 .title{
-    margin-top: 80px;
-    vertical-align: -webkit-baseline-middle;
+    margin-top: 60px;
+    font-size: 20px
 }
 
 h1{
     color: var(--colorText);
     text-align: center;
     padding-top: 20px;
-
+    padding-top: 30px;
+    padding-bottom: 10px;
 }
 
 .img-book{
     width: 100%;
-    border-radius: 100px;
+    border-radius: 80px;
 }
    
 #sec2{
@@ -149,4 +150,25 @@ h2{
 #sec3{
   background-color: var(--sec3-bg);
   height: 100vh; 
+=======
+  text-align: center;
+  padding-top: 30px;
+}
+  
+h2{
+  margin: 0;
+  padding-top: 15px;
+  color: #fff;
+  font-size: 40px;
+}
+
+.slider{
+  align-items: center;
+  text-align: center;
+  
+}
+
+   #sec3{
+    background-color: var(--sec3-bg);
+     height: 100vh; 
 }

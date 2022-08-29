@@ -1,4 +1,5 @@
-CREATE DATABASE gary_goodsped;
+DROP DATABASE if exists gary_goodsped;
+CREATE DATABASE if not exists gary_goodsped;
 USE gary_goodsped;
 
 CREATE TABLE if not exists Matter(
@@ -36,5 +37,16 @@ name_user VARCHAR(30),
 passwor VARCHAR(30),
 privilege VARCHAR(30),
 PRIMARY KEY(user_id));
--- Falta la foto
 
+/* Privilegios
+admin = Administrador
+student = Estudiante
+teacher = Profesor
+*/
+
+INSERT into USERS (name_user, passwor, privilege) VALUES
+('admin', 'admin', 'admin'),
+('Ayrton', 'admin', 'admin'),
+('Facu', 'admin', 'admin'),
+('pancho', 'pancho123', 'student'),
+('Carlos', 'kalo456', 'teacher');

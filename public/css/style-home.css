@@ -1,17 +1,19 @@
 :root{
+  /*General*/
+  --colorText: #fff;
+
   /*Nav Bar*/
   --hnav: 80px;
   --bg-nav: rgba(2, 14, 24, 1);
 
-  /*Página Home*/
-  /*Sección 1*/
+  /*Home Page*/
+  /*Section 1*/
   --sec1-bg: #071F35;
-  --color-h1: #fff;
 
-  /*Sección 2*/
+  /*Section 2*/
   --sec2-bg: #182655;
 
-  /*Sección 3*/
+  /*Section 3*/
   --sec3-bg: #00040F;
 }
 
@@ -97,8 +99,9 @@
 }
 
 h1{
-    color: var(--color-h1);
+    color: var(--colorText);
     text-align: center;
+    padding-top: 20px;
 
 }
 
@@ -107,12 +110,43 @@ h1{
     border-radius: 100px;
 }
    
-   #sec2{
-    background-color: var(--sec2-bg);
-     height: 100vh; 
-   }
-   
-   #sec3{
-    background-color: var(--sec3-bg);
-     height: 100vh; 
-   }
+#sec2{
+  background-color: var(--sec2-bg);
+  height: 100vh; 
+}
+
+.titlesec2{
+  margin: 0;
+  text-align: center;
+  padding-top: 35px;
+  color: var(--colorText);
+  font-size: 25px;
+}
+
+h2{
+  display: inline-block;
+  margin: 0;
+  position: relative;
+}
+
+.new::before{
+  content: "";
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 0;
+  height: 2px;
+  background-color: rgb(0, 255, 0);
+  transition: width 1s ease-out;
+}
+
+.new:hover::before{
+  width: 100%;
+  left: 0;
+  right: auto;
+}
+
+#sec3{
+  background-color: var(--sec3-bg);
+  height: 100vh; 
+}

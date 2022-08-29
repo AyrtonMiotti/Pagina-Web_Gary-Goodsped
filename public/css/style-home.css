@@ -92,27 +92,47 @@
 }
 
 .title{
-    margin-top: 80px;
-    vertical-align: -webkit-baseline-middle;
+    margin-top: 60px;
+    font-size: 20px
 }
 
 h1{
     color: var(--color-h1);
     text-align: center;
+    padding-top: 30px;
+    padding-bottom: 10px;
 
 }
 
 .img-book{
     width: 100%;
-    border-radius: 100px;
+    border-radius: 80px;
 }
    
-   #sec2{
-    background-color: var(--sec2-bg);
-     height: 100vh; 
-   }
-   
+#sec2{
+  background-color: var(--sec2-bg);
+  height: 100vh; 
+}
+
+.titlesec2{
+  text-align: center;
+  padding-top: 30px;
+}
+  
+h2{
+  margin: 0;
+  padding-top: 15px;
+  color: #fff;
+  font-size: 40px;
+}
+
+.slider{
+  align-items: center;
+  text-align: center;
+  
+}
+
    #sec3{
     background-color: var(--sec3-bg);
      height: 100vh; 
-   }
+}

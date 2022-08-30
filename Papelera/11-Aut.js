@@ -205,3 +205,32 @@ transition-delay:
 }
 FIN NAV RESPONSIVE
 */
+
+
+
+
+
+/*Animacion barrita */
+
+h2{
+    display: inline-block;
+    margin: 0;
+    position: relative;
+  }
+  
+  .new::before{
+    content: "";
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: 0;
+    height: 2px;
+    background-color: rgb(0, 255, 0);
+    transition: width 1s ease-out;
+  }
+  
+  .new:hover::before{
+    width: 100%;
+    left: 0;
+    right: auto;
+  }

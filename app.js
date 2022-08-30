@@ -1,3 +1,4 @@
+//Pagina-Web_Gary-Goodsped
 // 1 - Invocamos a Express/ Summon Express
 const express = require('express');
 const app = express();
@@ -40,7 +41,7 @@ app.get('/', (req, res)=>{
 })
 
 
-app.get('/student_home', (req, res)=>{
+app.get('/student', (req, res)=>{
     res.render('student_home');
 })
 
@@ -63,6 +64,7 @@ app.get('/home', (req, res)=>{
 app.get('/homee', (req, res)=>{
     res.render('Homee')
 })
+
 // 11 - Autenticación
 app.post('/auth', (req, res)=>{
     const user = req.body.usr;

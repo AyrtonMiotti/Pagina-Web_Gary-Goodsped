@@ -12,6 +12,14 @@
   --hover-color: #444;
   --width-collapsed: 50px;
 
+  /*ANIMATION 1*/
+    --neon-color: #00b3ff;
+
+  /*Libreta - Calificaciones*/
+    --bg-Columna: #186EBC;
+    --bg-Fila: #062b4f;
+    --bg-notasPar: #82a9cc;
+    --bg-notasImpar: #cfdbe6;
 }
 
 * {
@@ -58,6 +66,7 @@ body {
   font-weight: bold;
   padding: 0 40px;
   line-height: 80px;
+  padding-top: 2%;
 }
 
 .logo-icon{
@@ -332,10 +341,34 @@ body {
 
 .animation1{
   overflow: hidden;
-  margin: auto auto;
-  height: 100%;
-  width: calc();
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  padding-top: inherit;
 
+}
+
+.box{
+  position: relative;
+  width: 100%;
+  height: 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+}
+
+.box h2{
+  color: #fff;
+  font-size: 5em;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-shadow: 0px 0px 10px var(--neon-color),
+                0px 0px 20px var(--neon-color),
+                0px 0px 40px var(--neon-color),
+                0px 0px 80px var(--neon-color),
+                0px 0px 120px var(--neon-color);
 }
 
 .pizarra{
@@ -365,7 +398,42 @@ body {
   margin: 30px;
 }
 
+.hidden{
+  overflow: hidden;
+}
 .animation2{
-  color: white;
+  overflow: hidden;
 }
 /*LEvantar el welcome y edspues poner el nombre de usuario*/
+
+
+/*Libreta de Alumnos*/
+
+table {
+  border: 1px solid red;
+  border-collapse: collapse;
+  margin: auto;
+}
+
+td {
+  text-align: center;
+  padding: 1rem;
+  border: 1px solid white;
+}
+
+thead {
+  background-color: var(--bg-Fila);
+  color: white;
+}
+
+tbody td:first-child {
+  background-color: var(--bg-Columna);
+}
+
+tbody tr:nth-child(2n) {
+  background-color: var(--bg-notasPar);
+}
+
+tbody tr:nth-child(2n+1) {
+  background-color: var(--bg-notasImpar);
+}

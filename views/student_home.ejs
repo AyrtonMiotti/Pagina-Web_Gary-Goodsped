@@ -6,7 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Home</title>
 
-    <link rel="stylesheet" href="resources/css/style.css" />
+    <link rel="icon" href="resources/Assets/GG-corto.ico" class="rel">
+    <link rel="stylesheet" href="resources/css/normalize.css"/>
+    <link rel="stylesheet" href="resources/css/style.css"/>
     <script
       src="https://kit.fontawesome.com/7e5b2d153f.js"
       crossorigin="anonymous"
@@ -22,7 +24,9 @@
   <body>
     <header class="header">
       <nav class="nav">
-        <a href="#" class="logo nav-link">Logo</a>
+        <a href="#" class="logo nav-link">
+          <img class="logo-icon" src="resources/Assets/logo-cor.png" alt="Gary Goodsped">
+        </a>
         <button class="nav-toggle" aria-label="Abrir menú">
           <i class="fas fa-bars"></i>
         </button>
@@ -59,19 +63,26 @@
   
       <!- PERFIL ->
       <div id="profile">
-        <div id="photo"><img src="Assets/ayrton.png" alt="Usuario"></div>
-        <div id="name"><span>Ayrton</span></div>
+        <div id="photo"><img src="resources/Assets/ayrton.png" alt="Usuario"></div>
+        <div id="name">
+          <span>Ayrton</span>
+          <div class="icon-edit">
+            <a href="#">
+              <img class="EditIcon" src="resources/Assets/EditIcon.svg" alt="Edit Profile">
+            </a>
+          </div>
+        </div>
       </div>
 
       <!- ITEMS ->
       <div id="menu-items">
         <div class="item">
           <a href="#">
-            <div class="icon">
-              <img src="Assets/trabajo-en-equipo.png" alt="Profesores">
+            <div class="icon first-icon">
+              <img src="resources/Assets/matters.png" alt="Materias">
             </div>
             <div class="title">
-              <span>Profesores</span>
+              <span>Materias</span>
             </div>
           </a>
         </div>
@@ -81,7 +92,7 @@
         <div class="item">
           <a href="">
             <div class="icon">
-              <img src="" alt="">
+              <img src="resources/Assets/matters.png" alt="">
             </div>
             <div class="title">
               <span>Nombre del icono</span>
@@ -91,24 +102,37 @@
 
         <div class="item separator"></div>
 
-        <div class="item close">
-          <a href="#">
+        <div class="item">
+          <a href="">
             <div class="icon">
-              <img src="Assets/exit.png" alt="Cerrar Sesión">
+              <img src="resources/Assets/matters.png" alt="">
             </div>
             <div class="title">
-              <span>Cerrar Sesión</span>
+              <span>Nombre del icono</span>
             </div>
           </a>
         </div>
 
+
+        <div class="item separator"></div>
+
+        <div class="item close">
+          <a class="exitLink" href="#">
+            <div class="icon">
+              <img class="ExitIcon" src="resources/Assets/exit.png" alt="Cerrar Sesión" style="width: 25px;">
+            </div>
+            <div class="title exitText">
+              <span class="exitText">Cerrar Sesión</span>
+            </div>
+          </a>
+        </div>
       </div>
     </div>
     <!- Fin Menú Lateral Desplegable ->
     <div class="animation1">
       <div class="cont-pizarra">
-        <img src="Assets/pizarra.png" alt="Pizarra" class="pizarra">
-        <span id="lbl">BIENVENIDO Alumno</span>
+        <img src="resources/Assets/pizarra.png" alt="Pizarra" class="pizarra">
+        <span id="lbl">BIENVENIDO PROFESOR</span>
         <br>
         <span id="lbl_usr">Nom_USer</span>
       </div>
@@ -123,6 +147,6 @@
   <script src="https://code.jquery.com/jquery-3.6.0.min.js">
     
   </script>
-  <script src="main.js"></script>
+  <script src="resources/main.js"></script>
   </body>
 </html>

@@ -60,6 +60,14 @@ body {
   line-height: 80px;
 }
 
+.logo-icon{
+  width: 150px;
+  height: 50px;
+  align-items: center;
+  justify-content: center;
+  vertical-align: middle
+}
+
 .nav-menu {
   display: flex;
   margin-right: 40px;
@@ -129,6 +137,7 @@ body {
   border-bottom: solid 1px var(--hover-color);
   padding: var(--padding);
   text-align: center;
+  margin-bottom: 5px;
 }
 
 #sidemenu #profile #photo{ /*Div imagen perfil*/
@@ -215,6 +224,9 @@ body {
   color: white;
 }
 
+.exitLink{
+  text-align: center;
+}
 /*Botón Menú*/
 #sidemenu #header #menu-btn{
   display: inline-block;
@@ -258,6 +270,15 @@ body {
   width: 100%;
 }
 
+.icon-edit{
+  display: contents;
+}
+
+.EditIcon{
+  width: 15px;
+}
+
+/*    Menu Colapsado     */
 .menu-collapsed{
   width: var(--width-collapsed);
 }
@@ -286,7 +307,16 @@ body {
 }
 
 .menu-collapsed .item{
-  width: 100px;
+  width: var(--width-collapsed);
+}
+
+.ExitIcon{
+  width: 25px;
+  
+}
+
+.exitText{
+  padding-right: 20px;
 }
 /*FIN MENÚ LATERAL DESPLEGABLE*/
 

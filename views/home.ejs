@@ -6,8 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Home</title>
 
-    <link rel="stylesheet" href="resources/css/normalize.css" />
-    <link rel="stylesheet" href="resources/css/style.css">
+    <link rel="icon" href="resources/Assets/GG-corto.ico" class="rel">
+    <link rel="stylesheet" href="resources/css/normalize.css"/>
+    <link rel="stylesheet" href="resources/css/style.css"/>
     <script
       src="https://kit.fontawesome.com/7e5b2d153f.js"
       crossorigin="anonymous"
@@ -23,7 +24,9 @@
   <body>
     <header class="header">
       <nav class="nav">
-        <a href="#" class="logo nav-link">Logo</a>
+        <a href="#" class="logo nav-link">
+          <img class="logo-icon" src="resources/Assets/logo-cor.png" alt="Gary Goodsped">
+        </a>
         <button class="nav-toggle" aria-label="Abrir menú">
           <i class="fas fa-bars"></i>
         </button>
@@ -61,14 +64,21 @@
       <!- PERFIL ->
       <div id="profile">
         <div id="photo"><img src="resources/Assets/ayrton.png" alt="Usuario"></div>
-        <div id="name"><span>Ayrton</span></div>
+        <div id="name">
+          <span>Ayrton</span>
+          <div class="icon-edit">
+            <a href="#">
+              <img class="EditIcon" src="resources/Assets/EditIcon.svg" alt="Edit Profile">
+            </a>
+          </div>
+        </div>
       </div>
 
       <!- ITEMS ->
       <div id="menu-items">
         <div class="item">
           <a href="#">
-            <div class="icon">
+            <div class="icon first-icon">
               <img src="resources/Assets/trabajo-en-equipo.png" alt="Profesores">
             </div>
             <div class="title">
@@ -93,16 +103,15 @@
         <div class="item separator"></div>
 
         <div class="item close">
-          <a href="#">
+          <a class="exitLink" href="#">
             <div class="icon">
-              <img src="resources/Assets/exit.png" alt="Cerrar Sesión">
+              <img class="ExitIcon" src="resources/Assets/exit.png" alt="Cerrar Sesión" style="width: 25px;">
             </div>
-            <div class="title">
-              <span>Cerrar Sesión</span>
+            <div class="title exitText">
+              <span class="exitText">Cerrar Sesión</span>
             </div>
           </a>
         </div>
-
       </div>
     </div>
     <!- Fin Menú Lateral Desplegable ->

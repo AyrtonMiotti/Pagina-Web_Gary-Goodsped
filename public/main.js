@@ -8,7 +8,6 @@ window.onload = function(){
   }, 2000)
   $(".animation1").delay(2000).fadeOut();
   $("body").removeClass(".animation1");
-  
 }
 
 

@@ -13,7 +13,7 @@
   "description": "Gestion de Estudiantes",
   "main": "app.js",
   "scripts": {
-    "ayrtonHacker": "nodemon app.js"
+    "ysi": "nodemon app.js"
   },
   "author": "aytonsobich",
   "license": "ISC"

@@ -435,13 +435,13 @@ body {
 .animation2{
   overflow: hidden;
   padding-left: 5%;
-  padding-top: -15%;
 }
 
 .ShSec1{
   overflow: hidden;
   margin-top: 100px;
-  height: 100%;
+  display: inline;
+  height: 100vh;
 }
 
 .ShSec1 #ShSec1{

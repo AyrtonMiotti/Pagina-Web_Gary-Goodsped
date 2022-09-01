@@ -434,24 +434,36 @@ body {
 }
 .animation2{
   overflow: hidden;
-}
-
-.ShSec1, .ShSec2, .ShSec3{
-  overflow: hidden;
-  height: 100vh;
+  padding-left: 5%;
+  padding-top: -15%;
 }
 
 .ShSec1{
-  padding-left: 5%;
-  margin-top: 12%;
+  overflow: hidden;
+  margin-top: 100px;
+  height: 100%;
+}
+
+.ShSec1 #ShSec1{
+  padding-left: 55%;
+  margin-top: 5%;
+}
+
+.ShSec2{
+  overflow: hidden;
+  width: 100vh;
 }
 
 /*Libreta de Alumnos*/
 
-table {
+
+
+
+#ShSec1 table {
   border: 1px solid red;
   border-collapse: collapse;
-  margin: auto;
+  margin-top: 5%;
+  margin-bottom: 2%;
 }
 
 td {

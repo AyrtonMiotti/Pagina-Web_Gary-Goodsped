@@ -63,7 +63,8 @@ app.post('/auth', (req, res)=>{
                 return;
             }
 
-            if(pass != results[0].passwor){
+            
+            if (results[0] === undefined){
                 res.render('login', {
                     alert: true,
                     alertTitle: "Error",
@@ -72,47 +73,61 @@ app.post('/auth', (req, res)=>{
                     showConfirmButton: true,
                     timer: 1200,
                     ruta: ''
-                });
+                })
+                return
             }
             else{
-                req.session.name = results[0].name_user;
-                if(results[0].privilege == 'student'){
-                    req.session.loggedin1 = true;
+                if (pass != results[0].passwor) {
                     res.render('login', {
                         alert: true,
-                        alertTitle: "Conexión exitosa",
-                        alertMessage: "¡Login correcto!",
-                        alertIcon: "succes",
-                        showConfirmButton: false,
-                        timer: 1500,
+                        alertTitle: "Error",
+                        alertMessage: "Usuario y/o contraseña incorrectos",
+                        alertIcon: "error",
+                        showConfirmButton: true,
+                        timer: 1200,
                         ruta: ''
                     });
                 }
-                if(results[0].privilege == 'teacher'){
-                    req.session.loggedin2 = true;
-                    res.render('login', {
-                        alert: true,
-                        alertTitle: "Conexión exitosa",
-                        alertMessage: "¡Login correcto!",
-                        alertIcon: "succes",
-                        showConfirmButton: false,
-                        timer: 1500,
-                        ruta: ''
-                    });
-                }
-                if(results[0].privilege == 'admin'){
-                    req.session.loggedin3 = true;
-                    res.render('login', {
-                        alert: true,
-                        alertTitle: "Conexión exitosa",
-                        alertMessage: "¡Login correcto!",
-                        alertIcon: "succes",
-                        showConfirmButton: false,
-                        timer: 1500,
-                        ruta: ''
-                    });
-                }
+                else {
+                    req.session.name = results[0].name_user;
+                    if (results[0].privilege == 'student') {
+                        req.session.loggedin1 = true;
+                        res.render('login', {
+                            alert: true,
+                            alertTitle: "Conexión exitosa",
+                            alertMessage: "¡Login correcto!",
+                            alertIcon: "succes",
+                            showConfirmButton: false,
+                            timer: 1500,
+                            ruta: ''
+                        });
+                    }
+                    if (results[0].privilege == 'teacher') {
+                        req.session.loggedin2 = true;
+                        res.render('login', {
+                            alert: true,
+                            alertTitle: "Conexión exitosa",
+                            alertMessage: "¡Login correcto!",
+                            alertIcon: "succes",
+                            showConfirmButton: false,
+                            timer: 1500,
+                            ruta: ''
+                        });
+                    }
+                    if (results[0].privilege == 'admin') {
+                        req.session.loggedin3 = true;
+                        res.render('login', {
+                            alert: true,
+                            alertTitle: "Conexión exitosa",
+                            alertMessage: "¡Login correcto!",
+                            alertIcon: "succes",
+                            showConfirmButton: false,
+                            timer: 1500,
+                            ruta: ''
+                        });
+                    }
 
+                }
             }
         })
 });

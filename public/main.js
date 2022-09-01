@@ -2,7 +2,7 @@ window.onload = function(){
   setTimeout(function(){
       //welcome();
   }, 2000)
-  $(".animation1").delay(1500).fadeOut();
+  $(".animation1").delay(2000).fadeOut();
   $("body").removeClass(".animation1");
   $("body").removeClass(".animation2"); //Fijarse bien
 }

@@ -36,17 +36,8 @@ const connection = require('./Database/db');
 
 
 // 9 - Estableciendo las rutas
-app.get('/', (req, res)=>{
+app.get('/login', (req, res)=>{
     res.render('login');
-})
-
-
-app.get('/student', (req, res)=>{
-    res.render('student_home');
-})
-
-app.get('/teacher_home', (req, res)=>{
-    res.render('teacher_home');
 })
 
 app.get('/navlist', (req, res)=>{
@@ -55,10 +46,6 @@ app.get('/navlist', (req, res)=>{
 
 app.get('/califications', (req, res)=>{
     res.render('califications')
-})
-
-app.get('/home', (req, res)=>{
-    res.render('home')
 })
 
 app.get('/homee', (req, res)=>{
@@ -70,7 +57,6 @@ app.post('/auth', (req, res)=>{
     const user = req.body.usr;
     const pass = req.body.password;
     //let passwordHaash = await bcryptjs.hash(pass, 8);
-    console.log(user,pass);
         connection.query('SELECT * FROM USERS WHERE name_user = ?', [user], (error, results) =>{
             if(error){
                 console.log("El error que devolvió SQL es: " + error);
@@ -89,8 +75,9 @@ app.post('/auth', (req, res)=>{
                 });
             }
             else{
-                // res.session.name = results[0].name; Para obtener un valor de la BD
+                req.session.name = results[0].name_user;
                 if(results[0].privilege == 'student'){
+                    req.session.loggedin1 = true;
                     res.render('login', {
                         alert: true,
                         alertTitle: "Conexión exitosa",
@@ -98,10 +85,11 @@ app.post('/auth', (req, res)=>{
                         alertIcon: "succes",
                         showConfirmButton: false,
                         timer: 1500,
-                        ruta: 'student_home'
+                        ruta: ''
                     });
                 }
                 if(results[0].privilege == 'teacher'){
+                    req.session.loggedin2 = true;
                     res.render('login', {
                         alert: true,
                         alertTitle: "Conexión exitosa",
@@ -109,10 +97,11 @@ app.post('/auth', (req, res)=>{
                         alertIcon: "succes",
                         showConfirmButton: false,
                         timer: 1500,
-                        ruta: 'teacher_home'
+                        ruta: ''
                     });
                 }
                 if(results[0].privilege == 'admin'){
+                    req.session.loggedin3 = true;
                     res.render('login', {
                         alert: true,
                         alertTitle: "Conexión exitosa",
@@ -120,7 +109,7 @@ app.post('/auth', (req, res)=>{
                         alertIcon: "succes",
                         showConfirmButton: false,
                         timer: 1500,
-                        ruta: 'home'
+                        ruta: ''
                     });
                 }
 
@@ -129,6 +118,27 @@ app.post('/auth', (req, res)=>{
 });
 
 
+// 12 - Auth pages
+app.get('/', (req, res)=>{
+    if(req.session.loggedin1){
+        res.render('student_home', {
+            login: true,
+            name: req.session.name
+        });
+    }
+    if(req.session.loggedin2){
+        res.render('teacher_home', {
+            login: true,
+            name: req.session.name
+        });
+    }
+    if(req.session.loggedin3){
+        res.render('home', {
+            login: true,
+            name: req.session.name
+        });
+    }
+})
 
 app.listen(3309, (req, res)=>{
     console.log("");

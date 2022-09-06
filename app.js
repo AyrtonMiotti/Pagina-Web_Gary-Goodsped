@@ -52,6 +52,11 @@ app.get('/homee', (req, res)=>{
     res.render('Homee')
 })
 
+
+app.get('/land', (req, res)=>{
+    res.render('admin_landing')
+})
+
 // 11 - Autenticación
 app.post('/auth', (req, res)=>{
     const user = req.body.usr;

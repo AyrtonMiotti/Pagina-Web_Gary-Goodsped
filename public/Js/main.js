@@ -6,8 +6,8 @@ window.onload = function(){
   $("body").removeClass(".animation1"); //Fijarse bien
 }
 
-const califi = document.querySelector('#Btn#1');
-const matter = document.querySelector('#Btn#2');
+const califi = document.querySelector('#Btn1');
+const matter = document.querySelector('#Btn2');
 
 matter.addEventListener('click', e =>{
   $("#ShSec1").delay(100).fadeOut();
@@ -20,3 +20,6 @@ btn.addEventListener("click", e =>{
   menu.classList.toggle("menu-collapsed");
   document.querySelector("body").classList.toggle("body-expanded");
 });
+
+
+

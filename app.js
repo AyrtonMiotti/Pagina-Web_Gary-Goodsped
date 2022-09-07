@@ -40,21 +40,29 @@ app.get('/login', (req, res)=>{
     res.render('login');
 })
 
+app.get('/Admin%Students', (req, res)=>{
+    res.render('ADMIN-Students');
+})
+
+app.get('/Admin%Teachers', (req, res)=>{
+    res.render('ADMIN-Teachers');
+})
+
 app.get('/navlist', (req, res)=>{
     res.render('navlist');
 })
 
 app.get('/califications', (req, res)=>{
-    res.render('califications')
+    res.render('califications');
 })
 
 app.get('/homee', (req, res)=>{
-    res.render('Homee')
+    res.render('Homee');
 })
 
 
 app.get('/land', (req, res)=>{
-    res.render('admin_landing')
+    res.render('ADMIN_Landing');
 })
 
 // 11 - Autenticación
@@ -153,7 +161,7 @@ app.get('/', (req, res)=>{
         });
     }
     if(req.session.loggedin3){
-        res.render('home', {
+        res.render('ADMIN_Landing', {
             login: true,
             name: req.session.name
         });

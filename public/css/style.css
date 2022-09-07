@@ -51,6 +51,7 @@ body {
   padding: 80px 20px 0;
   background-color: var(--bg-color);
   margin-left: var(--width-collapsed);
+  height: 100vh;
 }
 
 .body-expanded{
@@ -450,6 +451,8 @@ body {
 
 .hidden{
   overflow: hidden;
+  position: absolute;
+  width: 100%;
 }
 .animation2{
   overflow: hidden;
@@ -1198,12 +1201,12 @@ tbody tr:nth-child(2n+1) {
   padding: 1.5rem;
 }
 
-.split.left .btn:hover {
+.split.left .btn-select:hover {
   background-color: var(--left-btn-hover-color);
   border-color: var(--left-btn-hover-color);
 }
 
-.split.right .btn:hover {
+.split.right .btn-select:hover {
   background-color: var(--right-btn-hover-color);
   border-color: var(--right-btn-hover-color);
 }
@@ -1283,3 +1286,140 @@ tbody tr:nth-child(2n+1) {
     width: 12rem;
   }
 }
+
+
+/* -------- ADMIN | STUDENTS -------- */
+
+/* -------- ADD STUDENTS --------*/
+.AS-Add{
+  padding-top: var(--hnav);
+  margin-top: var(--hnav);
+  margin-left: 180px;
+  height: 100vh;
+  width: 100%;
+  overflow: hidden;
+  color: white;
+}
+
+.add-container{
+  margin: 1% 8%;
+}
+
+.form-add-s{
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+.Add-tittle{
+  text-align: center;
+  font-size: 35px;
+  margin: 0.5% auto;
+}
+
+.Add-span{
+  font-size: 20px;
+}
+.Add-t-container{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.Add-l-container{
+  height: 65vh;
+  width: 40%;
+  background-color: #444;
+  display: flex;
+  flex-direction: column;
+  align-content: space-around;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: flex-start;
+}
+
+.group-gender{
+  display: flex;
+}
+
+#gender-input{
+  margin: 0 10px;
+}
+
+.Add-r-container{
+  height: 65vh;
+  width: 40%;
+  background-color: #777;
+  display: flex;
+  flex-direction: column;
+  align-content: space-around;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: flex-start;
+}
+
+.date-input{
+  text-transform: uppercase;
+}
+
+.Add-span{
+  display: block;
+}
+
+
+.group-course{
+  display: flex;
+}
+
+
+.Add-b-container{
+  height: 10vh;
+  width: 80%;
+  background-color: #ad5;
+  padding: 10px 1%;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+  margin-left: 10%;
+}
+
+.btn-cancel{
+  margin: 0 10px;
+  color: white;
+  background-color: rgb(179, 25, 25);
+  height: 90%;
+  width: 150px;
+  border-radius: 15px;
+  font-size: 20px;
+}
+
+.btn-save{
+  color: white;
+  background-color: rgb(25, 179, 64);
+  height: 90%;
+  width: 150px;
+  border-radius: 15px;
+  font-size: 20px;
+}
+
+.AS-Edit{
+  padding-top: var(--hnav);
+  margin-top: var(--hnav);
+  margin-left: 180px;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  color: white;
+}
+
+.AS-Remove{
+  margin-top: var(--hnav);
+  margin-left: 180px;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  color: white;
+}
+
+/* -------- MODIFY STUDENTS --------*/

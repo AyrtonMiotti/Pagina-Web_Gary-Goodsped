@@ -66,6 +66,9 @@ DOCTYPE html>
       <div id="profile">
         <div id="photo"><img src="resources/Assets/ayrton.png" alt="Usuario"></div>
         <div id="name">
+          <% if(login) { %>
+            <span><%= name %></span>
+            <% } %>
           <span>Ayrton</span>
           <div class="icon-edit">
             <a href="#">

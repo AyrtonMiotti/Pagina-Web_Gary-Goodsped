@@ -69,7 +69,7 @@
           <div class="item">
             <a href="#AS-Add" id="Btn1">
               <div class="icon first-icon">
-                <img src="resources/Assets/matters.png" alt="Materias">
+                <img src="resources/Assets/add-usr.png" alt="Materias">
               </div>
               <div class="title">
                 <span>Agregar</span>
@@ -95,14 +95,14 @@
           <div class="item">
             <a href="#AS-Remove" id="Btn3">
               <div class="icon">
-                <img src="resources/Assets/matters.png" alt="">
+                <img src="resources/Assets/remove-usr.png" alt="">
               </div>
               <div class="title">
                 <span>Eliminar</span>
               </div>
             </a>
           </div>
-  
+
           <div class="item separator"></div>
   
           <div class="item close">
@@ -110,8 +110,8 @@
               <div class="icon">
                 <img class="ExitIcon" src="resources/Assets/exit.png" alt="Cerrar Sesión" style="width: 25px;">
               </div>
-              <div class="title exitText">
-                <span class="Add-span exitText">Cerrar Sesión</span>
+              <div class="title ">
+                <span class="exitText">Cerrar Sesión</span>
               </div>
             </a>
           </div>
@@ -191,7 +191,74 @@
         </div>
     </article>
     <article class="AS-Edit" id="AS-Edit">
-        <div class="edit-container"><h1>Wenas1</h1></div>
+      <div class="edit-container">
+        <form action="#" class="form-edit-s">
+            <span class="Edit-tittle">EDITAR ALUMNO</span>
+            <div class="Edit-t-container">
+                <div class="Edit-l-container">
+                    <div class="group-name">
+                        <span class="Edit-span name-txt">Nombre:</span>
+                        <input class="name-input" type="text" placeholder="Ingrese el/los Nombres" required>
+                    </div>
+
+                    <div class="group-dni">
+                        <span class="Edit-span dni-txt">DNI:</span>
+                        <input class="dni-input" type="number" placeholder="Ingrese el DNI" required>
+                    </div>
+
+                    <div class="group-addres">
+                        <span class="Edit-span addres-txt">Dirección:</span>
+                        <input class="addres-input" type="text" placeholder="Ingrese la Dirección" required>
+                    </div>
+
+                    <div class="group-gender">
+                        <span class="Edit-span gender-txt">Género:</span>
+                        <select name="Género" id="gender-input">
+                            <option value="M">Masculino</option>
+                            <option value="F">Femenino</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="Edit-r-container">
+                    <div class="group-surname">
+                        <span class="Edit-span surname-txt">Apellido:</span>
+                        <input class="surname-input" type="text" placeholder="Ingrese el/los Apellidos" required>
+                    </div>
+
+                    <div class="group-date">
+                        <span class="Edit-span date-txt">Fecha Nacimiento:</span>
+                        <input class="date-input" type="date" required>
+                    </div>
+
+                    <div class="AS-course">
+                        <div class="group-course">
+                            <span class="Edit-span course-txt">Curso:</span>
+                            <select name="Curso" id="course-input" class="course-input">
+                                <option value="Primer Año">Primer Año</option>
+                                <option value="Segundo Año">Segundo Año</option>
+                                <option value="Tercer Año">Tercer Año</option>
+                                <option value="Cuarto Año">Cuarto Año</option>
+                                <option value="Quinto Año">Quinto Año</option>
+                                <option value="Sexto Año">Sexto Año</option>
+                                <option value="Séptimo Año">Séptimo Año</option>
+                            </select>
+                            <span class="Edit-span course-divition">División:</span>
+                            <select name="División" id="divition-input">
+                                <option value="A">A</option>
+                                <option value="B">B</option>
+                                <option value="C">C</option>
+                            </select>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+            <div class="Edit-b-container">
+                <input class="btn-cancel" type="button" value="Cancelar">
+                <input class="btn-save" type="button" value="Guardar">
+            </div>
+        </form>
     </article>
     <article class="AS-Remove" id="AS-Remove">
         <div class="remove-container"><h1>Wenas2</h1></div>

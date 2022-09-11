@@ -67,8 +67,21 @@
         <!- ITEMS ->
         <div id="menu-items">
           <div class="item">
-            <a href="#AS-Add" id="Btn1">
+            <a href="" id="Btn0">
               <div class="icon first-icon">
+                <img src="resources/Assets/add-usr.png" alt="Materias">
+              </div>
+              <div class="title">
+                <span>Home</span>
+              </div>
+            </a>
+          </div>
+
+          <div class="item separator"></div>
+
+          <div class="item">
+            <a href="#AS-Add" id="Btn1">
+              <div class="icon">
                 <img src="resources/Assets/add-usr.png" alt="Materias">
               </div>
               <div class="title">
@@ -76,13 +89,13 @@
               </div>
             </a>
           </div>
-  
+
           <div class="item separator"></div>
   
           <div class="item">
             <a href="#AS-Edit" id='Btn2'>
               <div class="icon">
-                <img src="resources/Assets/matters/(3).png" alt="Materias">
+                <img src="resources/Assets/usr-edit.png" alt="Materias">
               </div>
               <div class="title">
                 <span>Modificar</span>
@@ -119,30 +132,35 @@
       </div>
     <!- Fin Menú Lateral Desplegable ->
 
+    <div class="AS-Home">
+      <h1>Home</h1>
+    </div>
+
     <article class="AS-Add" id="AS-Add">
         <div class="add-container">
-            <form action="#" class="form-add-s">
+            <form action="/addStudent" method="post" class="form-add-s" >
                 <span class="Add-tittle">AGREGAR ALUMNO</span>
                 <div class="Add-t-container">
                     <div class="Add-l-container">
+
                         <div class="group-name">
                             <span class="Add-span name-txt">Nombre:</span>
-                            <input class="name-input" type="text" placeholder="Ingrese el/los Nombres" required>
+                            <input class="add_name" name="add_name" type="text" placeholder="Ingrese el/los Nombres" required>
                         </div>
 
                         <div class="group-dni">
                             <span class="Add-span dni-txt">DNI:</span>
-                            <input class="dni-input" type="number" placeholder="Ingrese el DNI" required>
+                            <input class="add_dni" name="add_dni" type="number" placeholder="Ingrese el DNI" required>
                         </div>
 
                         <div class="group-addres">
                             <span class="Add-span addres-txt">Dirección:</span>
-                            <input class="addres-input" type="text" placeholder="Ingrese la Dirección" required>
+                            <input class="add_addres" name="add_addres" type="text" placeholder="Ingrese la Dirección" required>
                         </div>
 
                         <div class="group-gender">
                             <span class="Add-span gender-txt">Género:</span>
-                            <select name="Género" id="gender-input">
+                            <select name="add_gender" class="add_gender" id="add_gender">
                                 <option value="M">Masculino</option>
                                 <option value="F">Femenino</option>
                             </select>
@@ -152,18 +170,18 @@
                     <div class="Add-r-container">
                         <div class="group-surname">
                             <span class="Add-span surname-txt">Apellido:</span>
-                            <input class="surname-input" type="text" placeholder="Ingrese el/los Apellidos" required>
+                            <input class="add_surname" name="add_surname" type="text" placeholder="Ingrese el/los Apellidos" required>
                         </div>
 
                         <div class="group-date">
                             <span class="Add-span date-txt">Fecha Nacimiento:</span>
-                            <input class="date-input" type="date" required>
+                            <input class="add_date" name="add_date" type="date" required>
                         </div>
 
                         <div class="AS-course">
                             <div class="group-course">
                                 <span class="Add-span course-txt">Curso:</span>
-                                <select name="Curso" id="course-input" class="course-input">
+                                <select name="add_course" class="add_course" id="course-input">
                                     <option value="Primer Año">Primer Año</option>
                                     <option value="Segundo Año">Segundo Año</option>
                                     <option value="Tercer Año">Tercer Año</option>
@@ -173,7 +191,7 @@
                                     <option value="Séptimo Año">Séptimo Año</option>
                                 </select>
                                 <span class="Add-span course-divition">División:</span>
-                                <select name="División" id="divition-input">
+                                <select name="add_divition" class="add_divition" id="divition-input">
                                     <option value="A">A</option>
                                     <option value="B">B</option>
                                     <option value="C">C</option>
@@ -185,11 +203,12 @@
                 </div>
                 <div class="Add-b-container">
                     <input class="btn-cancel" type="button" value="Cancelar">
-                    <input class="btn-save" type="button" value="Guardar">
+                    <input class="btn-save" type="submit" value="Guardar">
                 </div>
             </form>
         </div>
     </article>
+
     <article class="AS-Edit" id="AS-Edit">
       <div class="edit-container">
         <form action="#" class="form-edit-s">
@@ -260,8 +279,77 @@
             </div>
         </form>
     </article>
+
     <article class="AS-Remove" id="AS-Remove">
-        <div class="remove-container"><h1>Wenas2</h1></div>
+        <div class="remove-container">
+            <form action="#" class="form-edit-s">
+              <span class="Edit-tittle">ELIMINAR ALUMNO</span>
+              <div class="Edit-t-container">
+                  <div class="Edit-l-container">
+                      <div class="group-name">
+                          <span class="Edit-span name-txt">Nombre:</span>
+                          <input class="name-input" type="text" placeholder="Ingrese el/los Nombres" required>
+                      </div>
+
+                      <div class="group-dni">
+                          <span class="Edit-span dni-txt">DNI:</span>
+                          <input class="dni-input" type="number" placeholder="Ingrese el DNI" required>
+                      </div>
+
+                      <div class="group-addres">
+                          <span class="Edit-span addres-txt">Dirección:</span>
+                          <input class="addres-input" type="text" placeholder="Ingrese la Dirección" required>
+                      </div>
+
+                      <div class="group-gender">
+                          <span class="Edit-span gender-txt">Género:</span>
+                          <select name="Género" id="gender-input">
+                              <option value="M">Masculino</option>
+                              <option value="F">Femenino</option>
+                          </select>
+                      </div>
+                  </div>
+
+                  <div class="Edit-r-container">
+                      <div class="group-surname">
+                          <span class="Edit-span surname-txt">Apellido:</span>
+                          <input class="surname-input" type="text" placeholder="Ingrese el/los Apellidos" required>
+                      </div>
+
+                      <div class="group-date">
+                          <span class="Edit-span date-txt">Fecha Nacimiento:</span>
+                          <input class="date-input" type="date" required>
+                      </div>
+
+                      <div class="AS-course">
+                          <div class="group-course">
+                              <span class="Edit-span course-txt">Curso:</span>
+                              <select name="Curso" id="course-input" class="course-input">
+                                  <option value="Primer Año">Primer Año</option>
+                                  <option value="Segundo Año">Segundo Año</option>
+                                  <option value="Tercer Año">Tercer Año</option>
+                                  <option value="Cuarto Año">Cuarto Año</option>
+                                  <option value="Quinto Año">Quinto Año</option>
+                                  <option value="Sexto Año">Sexto Año</option>
+                                  <option value="Séptimo Año">Séptimo Año</option>
+                              </select>
+                              <span class="Edit-span course-divition">División:</span>
+                              <select name="División" id="divition-input">
+                                  <option value="A">A</option>
+                                  <option value="B">B</option>
+                                  <option value="C">C</option>
+                              </select>
+                          </div>
+                          
+                      </div>
+                  </div>
+              </div>
+              <div class="Edit-b-container">
+                  <input class="btn-cancel" type="button" value="Cancelar">
+                  <input class="btn-save" type="button" value="Guardar">
+              </div>
+          </form>
+        </div>
     </article>
 
       <script src="resources\Js\main.js"></script>

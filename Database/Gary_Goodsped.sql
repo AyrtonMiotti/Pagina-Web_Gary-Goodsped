@@ -27,23 +27,14 @@ id_teacher INT,
 FOREIGN KEY (id_teacher) REFERENCES Teachers(id_teacher), -- or DNI
 PRIMARY KEY(id_matter));
 
-CREATE TABLE students(
-name_s VARCHAR(50),
-surname VARCHAR(30),
-dni INT,
-birthday DATE,
-address VARCHAR(30),
-id_course INT,
-user_id INT,
-FOREIGN KEY (user_id) REFERENCES USERS(user_id),
-PRIMARY KEY(dni));
+CREATE TABLE if not exists Divition(
+id_divi INT auto_increment,
+diviti VARCHAR(1),
+PRIMARY KEY (id_divi));
 
 CREATE TABLE if not exists Courses(
 id_course INT auto_increment,
 name_c VARCHAR(30),
-divition VARCHAR(2),
-dni INT,
-FOREIGN KEY (dni) REFERENCES students(dni),
 PRIMARY KEY(id_course));
 
 CREATE TABLE if not exists CourXMatter(
@@ -52,8 +43,20 @@ id_matter INT,
 FOREIGN KEY (id_course) REFERENCES Courses(id_course),
 FOREIGN KEY (id_matter) REFERENCES Matter(id_matter));
 
-
-
+CREATE TABLE students(
+name_s VARCHAR(50),
+surname VARCHAR(30),
+dni INT,
+birthday DATE,
+address VARCHAR(30),
+gender VARCHAR(1),
+id_course INT,
+id_divi INT,
+user_id INT,
+FOREIGN KEY (user_id) REFERENCES USERS(user_id),
+FOREIGN KEY (id_course) REFERENCES Courses(id_course),
+FOREIGN KEY (id_divi) REFERENCES Divition(id_divi),
+PRIMARY KEY(dni));
 
 /* Privilegios
 admin = Administrador
@@ -66,4 +69,19 @@ INSERT into USERS (name_user, passwor, privilege) VALUES
 ('Ayrton', 'admin', 'admin'),
 ('Facu', 'admin', 'admin'),
 ('pancho', 'pancho123', 'student'),
+('am45095310', '45095310', 'student'),
 ('Carlos', 'kalo456', 'teacher');
+
+
+INSERT INTO Divition(diviti) VALUES('A'), ('B'), ('C');
+INSERT INTO Courses(name_c) VALUES 
+	('Primer Año'),
+	('Segundo Año'),
+	('Tercer Año'),
+	('Cuarto Año'),
+	('Quinto Año'),
+	('Sexto Año'),
+	('Séptimo Año');
+INSERT INTO students(name_s, surname, dni, birthday, address, gender, id_course, id_divi, user_id) 
+	VALUES ('Ayrton', 'Miotti', 45095310, 29-01-2004, 'Monte 1305', 'M', 7, 'A', 1);
+SELECT * FROM students;

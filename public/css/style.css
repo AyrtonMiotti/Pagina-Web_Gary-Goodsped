@@ -1174,6 +1174,13 @@ tbody tr:nth-child(2n+1) {
   padding: 0;
 }
 
+.AS-Home{
+  height: 100vh;
+  width: 100% - var(--width-colap);
+  margin: 0;
+  color: wheat;
+}
+
 #text-btn {
   font-size: 3rem;
   color: #fff;
@@ -1481,11 +1488,9 @@ tbody tr:nth-child(2n+1) {
   display: block;
 }
 
-
 .group-course{
   display: flex;
 }
-
 
 .Edit-b-container{
   height: 10vh;

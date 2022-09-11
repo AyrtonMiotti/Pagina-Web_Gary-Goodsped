@@ -5,11 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Home</title>
-    <link rel="stylesheet" href="C:\Users\Facundo Nieto\Documents\GitHub\Pagina-Web_Gary-Goodsped\public\css\styleV3.css">
-    <link rel="shortcut icon" href="C:\Users\Facundo Nieto\Documents\GitHub\Pagina-Web_Gary-Goodsped\public\Assets\GG-logo.ico" type="image/x-icon">
+    <link rel="stylesheet" href="../public/css/styleV3.css">
+    <link rel="shortcut icon" href="../public/Assets/GG-logo.ico" type="image/x-icon">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+	<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 </head>
 <body>
     <header>
@@ -25,54 +26,72 @@
         </section>
         <div class="wave" style="height: 150px; overflow: hidden;" >
             <svg viewBox="0 0 500 150" preserveAspectRatio="none" style="height: 100%; width: 100%;">
-                <path d="M0.00,49.98 C149.99,150.00 349.20,-49.98 500.00,49.98 L500.00,150.00 L0.00,150.00 Z" style="stroke: none; fill: #ffffff;"></path>
+                <path d="M0.00,49.98 C149.99,150.00 349.20,-49.98 500.00,49.98 L500.00,150.00 L0.00,150.00 Z" style="stroke: none; fill: #071F35;"></path>
             </svg>
         </div>
     </header>
     <main>
         <section class="contenedor sobre-nosotros">
-            <h2 class="titulo">Construyamos juntos nuestro Futuro</h2>
-            <div class="disfruta-aprendes">
-                <img src="C:\Users\Facundo Nieto\Documents\GitHub\Pagina-Web_Gary-Goodsped\public\Assets\Home-Estudiantes debatiendo - reemplazo.jpg" alt="imagen-estudiantes">
-                <div class="contenido-textos">
-                    <h3>Disfruta mientras aprendes</h3>
-                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Fuga deserunt, sunt et exercitationem vitae hic esse totam ea blanditiis ipsam, laboriosam error facilis? Ipsa ut deserunt obcaecati aliquid praesentium assumenda.</p>
-                    <h3>Estudia lo que amas</h3>
-                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Fuga deserunt, sunt et exercitationem vitae hic esse totam ea blanditiis ipsam, laboriosam error facilis? Ipsa ut deserunt obcaecati aliquid praesentium assumenda.</p>
-                    <h3>Estamos para ayudarte</h3>
-                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Fuga deserunt, sunt et exercitationem vitae hic esse totam ea blanditiis ipsam, laboriosam error facilis? Ipsa ut deserunt obcaecati aliquid praesentium assumenda.</p>
+            <section class="Scroll">
+                <div class="hero">
+                    <h1>Construyamos juntos nuestro futuro</h1>
                 </div>
-            </div>
+                <div class="container">
+                    <div class="evento">
+                        <div class="foto" data-aos="fade-left">
+                            <img src="../public/Assets/Home-Estudiantes debatiendo - reemplazo.jpg" alt="">
+                        </div>
+                        <h3 class="fecha" data-aos="fade-right">Debata, argumente,
+                            proyecte, crea e imagina.
+                            Aprende con nuestro
+                            metodo de enseñanza
+                            y aprendizaje</h3>
+                    </div>
+                    <div class="evento">
+                        <div class="foto" data-aos="fade-right">
+                            <img src="../public/Assets/Home-Programador.jpg" alt="">
+                        </div>
+                        <h3 class="fecha" data-aos="fade-left">Elige tus cursados, 
+                            cada uno puede estudiar
+                             lo que desee.
+                            En Gary Goodsped
+                            deseamos que ames
+                            lo que estudies.</h3>
+                    </div>
+                    <div class="evento">
+                        <div class="foto" data-aos="fade-left">
+                            <img src="../public/Assets/Home-Psicologa.jpg" alt="">
+                        </div>
+                        <h3 class="fecha" data-aos="fade-right">Estamos al tanto de las
+                            dificultades que puedan
+                            tener cada estudiante. Es
+                            por eso que les
+                            proporcionamos
+                            asistencia Psicologica
+                            y Medica.</h3>
+                    </div>
+                </div>
+            
+            
+                <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+                <script>
+                    AOS.init({
+                        duration: 1000,
+                    });
+                </script>
         </section>
         <section class="Novedades">
-            <div class="contenedor">
-                <h2 class="titulo">Novedades</h2>
-                <div class="galeria-nov">
-                    <div class="imagen-nov">
-                        <img src="C:\Users\Facundo Nieto\Documents\GitHub\Pagina-Web_Gary-Goodsped\public\Assets\Home-Calendario.jpg" alt="">
-                        <div class="hover-galeria">
-                            <img src="C:\Users\Facundo Nieto\Documents\GitHub\Pagina-Web_Gary-Goodsped\public\Assets\ayrton.png" alt="">
-                            <p>Nuestro trabajo</p>
-                        </div>
-                    </div>
-                    <div class="imagen-nov">
-                        <img src="C:\Users\Facundo Nieto\Documents\GitHub\Pagina-Web_Gary-Goodsped\public\Assets\Home-Calendario.jpg" alt="">
-                        <div class="hover-galeria">
-                            <img src="C:\Users\Facundo Nieto\Documents\GitHub\Pagina-Web_Gary-Goodsped\public\Assets\ayrton.png" alt="">
-                            <p>Nuestro trabajo</p>
-                        </div>
-                    </div>
-                    <div class="imagen-nov">
-                        <img src="C:\Users\Facundo Nieto\Documents\GitHub\Pagina-Web_Gary-Goodsped\public\Assets\Home-Calendario.jpg" alt="">
-                        <div class="hover-galeria">
-                            <img src="C:\Users\Facundo Nieto\Documents\GitHub\Pagina-Web_Gary-Goodsped\public\Assets\ayrton.png" alt="">
-                            <p>Nuestro trabajo</p>
-                        </div>
-                    </div>
-                </div>
+            <h2 class="titulo">Novedades</h2>
+            <div class="slider-frame">
+                <ul>
+                    <li><img src="../public/Assets/Calen.jpg" alt=""></li>
+                    <li><img src="../public/Assets/CALENDARIO.jpg" alt=""></li>
+                    <li><img src="../public/Assets/Home-Calendario.jpg" alt=""></li>
+                    <li><img src="../public/Assets/Calen.jpg" alt=""></li>
+                </ul>
             </div>
-        </section>
     </main>
+    </section>
     <footer>
         <div class="contenedor-footer">
             <div class="content-foo">

@@ -83,5 +83,5 @@ INSERT INTO Courses(name_c) VALUES
 	('Sexto Año'),
 	('Séptimo Año');
 INSERT INTO students(name_s, surname, dni, birthday, address, gender, id_course, id_divi, user_id) 
-	VALUES ('Ayrton', 'Miotti', 45095310, 29-01-2004, 'Monte 1305', 'M', 7, 'A', 1);
+	VALUES ('Ayrton', 'Miotti', 45095310, '2004-01-29', 'Monte 1305', 'M', 7, 1, 1);
 SELECT * FROM students;

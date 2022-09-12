@@ -56,8 +56,8 @@ app.get('/califications', (req, res)=>{
     res.render('califications');
 })
 
-app.get('/homee', (req, res)=>{
-    res.render('Homee');
+app.get('/home', (req, res)=>{
+    res.render('Home');
 })
 
 

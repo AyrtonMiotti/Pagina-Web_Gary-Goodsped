@@ -1,139 +1,139 @@
 <!DOCTYPE html>
-<html lang="es">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Home</title>
-
+    <link rel="stylesheet" href="resources/css/style-home.css"/>
     <link rel="icon" href="resources/Assets/GG-corto.ico" class="rel">
-    <link rel="stylesheet" href="resources/css/normalize.css"/>
-    <link rel="stylesheet" href="resources/css/style.css"/>
-    <script
-      src="https://kit.fontawesome.com/7e5b2d153f.js"
-      crossorigin="anonymous"
-    ></script>
-
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Kavoon&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Special+Elite&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap" rel="stylesheet">
-
-  </head>
-  <body>
-    <header class="header">
-      <nav class="nav">
-        <a href="#" class="logo nav-link">
-          <img class="logo-icon" src="resources/Assets/logo-cor.png" alt="Gary Goodsped">
-        </a>
-        <button class="nav-toggle" aria-label="Abrir menú">
-          <i class="fas fa-bars"></i>
-        </button>
-        <ul class="nav-menu">
-          <li class="nav-menu-item">
-            <a href="#" class="nav-menu-link nav-link">Inicio</a>
-          </li>
-          <li class="nav-menu-item">
-            <a href="#" class="nav-menu-link nav-link">Autogestión</a>
-          </li>
-          <li class="nav-menu-item">
-            <a href="#" class="nav-menu-link nav-link">Sobre nosotros</a>
-          </li>
-          <li class="nav-menu-item">
-            <a href="#" class="nav-menu-link nav-link nav-menu-link_active"
-              >Contactanos</a
-            >
-          </li>
-        </ul>
-      </nav>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+</head>
+<body>
+    <!- Inicio del Header ->
+    <header class="">
+        <div class="heaader">
+            <nav class="nav">
+                <a href="" class="logo nav-link">
+                <img class="logo-icon" src="resources/Assets/logo-cor.png" alt="Gary Goodsped">
+                </a>
+                <button class="nav-toggle" aria-label="Abrir menú">
+                <i class="fas fa-bars"></i>
+                </button>
+                <ul class="nav-menu">
+                <li class="nav-menu-item">
+                    <a href="" class="nav-menu-link nav-link">Inicio</a>
+                </li>
+                <li class="nav-menu-item">
+                    <a href="login" class="nav-menu-link nav-link">Autogestión</a>
+                </li>
+                <li class="nav-menu-item">
+                    <a href="#" class="nav-menu-link nav-link">Sobre nosotros</a>
+                </li>
+                <li class="nav-menu-item">
+                    <a href="#" class="nav-menu-link nav-link nav-menu-link_active"
+                    >Contactanos</a
+                    >
+                </li>
+                </ul>
+            </nav>
+        <!- Fin del Header ->
+    </div>
+        <section class="textos-header">
+            <h1>Bienvenid@ a nuestra pagina</h1>
+            <h2>Estamos para brindarte nuestros servicios</h2>
+        </section>
+        <div class="wave" style="height: 150px; overflow: hidden;" >
+            <svg viewBox="0 0 500 150" preserveAspectRatio="none" style="height: 100%; width: 100%;">
+                <path d="M0.00,49.98 C149.99,150.00 349.20,-49.98 500.00,49.98 L500.00,150.00 L0.00,150.00 Z" style="stroke: none; fill: #071F35;"></path>
+            </svg>
+        </div>
     </header>
-    <!- Fin del Header ->
-
-    <div id="sidemenu" class="menu-collapsed">
-      <!- Header ->
-      <div id="header">
-        <div id="menu-btn">
-          <div class="btn-hamburger"></div>
-          <div class="btn-hamburger"></div>
-          <div class="btn-hamburger"></div>
+    <main>
+        <section class="contenedor sobre-nosotros">
+            <section class="Scroll">
+                <div class="hero">
+                    <h1>Construyamos juntos nuestro futuro</h1>
+                </div>
+                <div class="container">
+                    <div class="evento">
+                        <div class="foto" data-aos="fade-left">
+                            <img src="resources/Assets/Home-Estudiantes debatiendo - reemplazo.jpg" alt="">
+                        </div>
+                        <h3 class="fecha" data-aos="fade-right">Debata, argumente,
+                            proyecte, crea e imagina.
+                            Aprende con nuestro
+                            metodo de enseñanza
+                            y aprendizaje</h3>
+                    </div>
+                    <div class="evento">
+                        <div class="foto" data-aos="fade-right">
+                            <img src="resources/Assets/Home-Programador.jpg" alt="">
+                        </div>
+                        <h3 class="fecha" data-aos="fade-left">Elige tus cursados, 
+                            cada uno puede estudiar
+                             lo que desee.
+                            En Gary Goodsped
+                            deseamos que ames
+                            lo que estudies.</h3>
+                    </div>
+                    <div class="evento">
+                        <div class="foto" data-aos="fade-left">
+                            <img src="resources/Assets/Home-Psicologa.jpg" alt="">
+                        </div>
+                        <h3 class="fecha" data-aos="fade-right">Estamos al tanto de las
+                            dificultades que puedan
+                            tener cada estudiante. Es
+                            por eso que les
+                            proporcionamos
+                            asistencia Psicologica
+                            y Medica.</h3>
+                    </div>
+                </div>
+            
+            
+                <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+                <script>
+                    AOS.init({
+                        duration: 1000,
+                    });
+                </script>
+        </section>
+        <section class="Novedades">
+            <h2 class="titulo">Novedades</h2>
+            <div class="slider-frame">
+                <ul>
+                    <li><img src="resources/Assets/Calen.jpg" alt=""></li>
+                    <li><img src="resources/Assets/CALENDARIO.jpg" alt=""></li>
+                    <li><img src="resources/Assets/Home-Calendario.jpg" alt=""></li>
+                    <li><img src="resources/Assets/Calen.jpg" alt=""></li>
+                </ul>
+            </div>
+    </main>
+    </section>
+    <footer>
+        <div class="contenedor-footer">
+            <div class="content-foo">
+                <h4>Phone</h4>
+                <p>23544354346</p>
+            </div>
         </div>
-        <div id="title"><span>Gary Goodsped</span></div>
-      </div>
-  
-      <!- PERFIL ->
-      <div id="profile">
-        <div id="photo"><img src="resources/Assets/ayrton.png" alt="Usuario"></div>
-        <div id="name">
-          <span>Ayrton</span>
-          <div class="icon-edit">
-            <a href="#">
-              <img class="EditIcon" src="resources/Assets/EditIcon.svg" alt="Edit Profile">
-            </a>
-          </div>
+        <div class="contenedor-footer">
+            <div class="content-foo">
+                <h4>Email</h4>
+                <p>23544354346</p>
+            </div>
         </div>
-      </div>
-
-      <!- ITEMS ->
-      <div id="menu-items">
-        <div class="item">
-          <a href="#">
-            <div class="icon first-icon">
-              <img src="resources/Assets/trabajo-en-equipo.png" alt="Profesores">
+        <div class="contenedor-footer">
+            <div class="content-foo">
+                <h4>Location</h4>
+                <p>23544354346</p>
             </div>
-            <div class="title">
-              <span>Profesores</span>
-            </div>
-          </a>
         </div>
-
-        <div class="item separator"></div>
-
-        <div class="item">
-          <a href="">
-            <div class="icon">
-              <img src="" alt="">
-            </div>
-            <div class="title">
-              <span>Nombre del icono</span>
-            </div>
-          </a>
-        </div>
-
-        <div class="item separator"></div>
-
-        <div class="item close">
-          <a class="exitLink" href="#">
-            <div class="icon">
-              <img class="ExitIcon" src="resources/Assets/exit.png" alt="Cerrar Sesión" style="width: 25px;">
-            </div>
-            <div class="title exitText">
-              <span class="exitText">Cerrar Sesión</span>
-            </div>
-          </a>
-        </div>
-      </div>
-    </div>
-    <!- Fin Menú Lateral Desplegable ->
-    <div class="animation1">
-      <div class="box">
-        <div class="lightbar"></div>
-        <div class="topLayer"></div>
-        <% if(login) { %>
-          <h2 id="TextW">Bienvenido <%= name %></h2>
-          <% } %>
-      </div>
-    </div>
-    <div class="animation2">
-      <span>boenasss</span>
-    </div>
-
-
-
-
-  <script src="https://code.jquery.com/jquery-3.6.0.min.js">
-    
-  </script>
-  <script src="resources/main.js"></script>
-  </body>
+        <h2 class="titulo-final">&copy; Nieto Facundo | Miotti Ayrton</h2>
+    </footer>
+</body>
 </html>

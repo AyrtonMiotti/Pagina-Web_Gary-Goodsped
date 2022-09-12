@@ -217,6 +217,7 @@ body {
 #sidemenu #menu-items .item a{
   display: block;
   text-decoration: none;
+  height: 45px;
 
 }
 
@@ -253,9 +254,7 @@ body {
   color: white;
 }
 
-.exitLink{
-  text-align: center;
-}
+
 /*Botón Menú*/
 #sidemenu #header #menu-btn{
   display: inline-block;
@@ -346,6 +345,8 @@ body {
 
 .exitText{
   padding-right: 20px;
+  font-size: 15px;
+  display: inline;
 }
 /*FIN MENÚ LATERAL DESPLEGABLE*/
 
@@ -1173,6 +1174,13 @@ tbody tr:nth-child(2n+1) {
   padding: 0;
 }
 
+.AS-Home{
+  height: 100vh;
+  width: 100% - var(--width-colap);
+  margin: 0;
+  color: wheat;
+}
+
 #text-btn {
   font-size: 3rem;
   color: #fff;
@@ -1403,15 +1411,101 @@ tbody tr:nth-child(2n+1) {
   font-size: 20px;
 }
 
+/* -------- EDIT STUDENTS --------*/
+
 .AS-Edit{
   padding-top: var(--hnav);
   margin-top: var(--hnav);
   margin-left: 180px;
-  height: 100%;
+  height: 100vh;
   width: 100%;
   overflow: hidden;
   color: white;
 }
+
+.edit-container{
+  margin: 1% 8%;
+}
+
+.form-edit-s{
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+.Edit-tittle{
+  text-align: center;
+  font-size: 35px;
+  margin: 0.5% auto;
+}
+
+.Edit-span{
+  font-size: 20px;
+}
+.Edit-t-container{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.Edit-l-container{
+  height: 65vh;
+  width: 40%;
+  background-color: #444;
+  display: flex;
+  flex-direction: column;
+  align-content: space-around;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: flex-start;
+}
+
+.group-gender{
+  display: flex;
+}
+
+#gender-input{
+  margin: 0 10px;
+}
+
+.Edit-r-container{
+  height: 65vh;
+  width: 40%;
+  background-color: #777;
+  display: flex;
+  flex-direction: column;
+  align-content: space-around;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: flex-start;
+}
+
+.date-input{
+  text-transform: uppercase;
+}
+
+.Edit-span{
+  display: block;
+}
+
+.group-course{
+  display: flex;
+}
+
+.Edit-b-container{
+  height: 10vh;
+  width: 80%;
+  background-color: #ad5;
+  padding: 10px 1%;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+  margin-left: 10%;
+}
+
+
+
 
 .AS-Remove{
   margin-top: var(--hnav);

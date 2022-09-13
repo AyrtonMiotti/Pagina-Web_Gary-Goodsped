@@ -40,30 +40,49 @@ app.get('/login', (req, res)=>{
     res.render('login');
 })
 
-app.get('/Admin%Students', (req, res)=>{
-    res.render('ADMIN-Students');
-})
-
-app.get('/Admin%Teachers', (req, res)=>{
-    res.render('ADMIN-Teachers');
-})
-
-app.get('/navlist', (req, res)=>{
-    res.render('navlist');
-})
-
-app.get('/califications', (req, res)=>{
-    res.render('califications');
-})
-
 app.get('/home', (req, res)=>{
     res.render('Home');
 })
 
+app.get('/profile', (req, res)=>{
+    res.render('Profile');
+})
 
+// ---RUTAS ADMIN ---
 app.get('/land', (req, res)=>{
     res.render('ADMIN_Landing');
 })
+
+app.get('/Admin%Students', (req, res)=>{
+    res.render('ADMIN-Students');
+})
+
+app.get('/Admin%Add%Student', (req, res)=>{
+    res.render('ADMIN-AddStudent');
+})
+
+app.get('/Admin%Edit%Student', (req, res)=>{
+    res.render('ADMIN-EditStudent');
+})
+
+app.get('/Admin%Remove%Student', (req, res)=>{
+    res.render('ADMIN-RemoveStudent');
+})
+app.get('/Admin%Teachers', (req, res)=>{
+    res.render('ADMIN-Teachers');
+})
+
+// ---RUTAS TEACHERS
+
+
+// ---RUTAS STUDENTS---
+app.get('/califications', (req, res)=>{
+    res.render('califications');
+})
+
+
+
+
 
 // 11 - Autenticación
 app.post('/auth', (req, res)=>{
@@ -75,7 +94,6 @@ app.post('/auth', (req, res)=>{
                 console.log("El error que devolvió SQL es: " + error);
                 return;
             }
-
             
             if (results[0] === undefined){
                 res.render('login', {
@@ -87,7 +105,7 @@ app.post('/auth', (req, res)=>{
                     timer: 1200,
                     ruta: ''
                 })
-                return
+                return;
             }
             else{
                 if (pass != results[0].passwor) {
@@ -145,6 +163,7 @@ app.post('/auth', (req, res)=>{
         })
 });
 
+
 // 12 - Auth pages
 app.get('/', (req, res)=>{
     if(req.session.loggedin1){
@@ -169,49 +188,93 @@ app.get('/', (req, res)=>{
 
 // 13 - ADMIN | Students
 app.post('/addStudent', (req, res)=>{
-    const Sname = req.body.add_name; 
+    const Sname = String(req.body.add_name);
     const dni = req.body.add_dni;
-    const addres = req.body.add_addres;
-    const gender = req.body.add_gender;
-    const surname = req.body.add_surname;
-    const birthday = req.body.add_date;
+    const addres = String(req.body.add_addres);
+    const gender = String(req.body.add_gender);
+    const surname = String(req.body.add_surname);
+    const birthday = String(req.body.add_date);
     const course = req.body.add_course;
     const divition = req.body.add_divition;
-    const privilege = "student";
+    const privilege = String("student");
 
-    console.log(
-        "Sname: " + Sname,
-        "dni: " + dni,
-        "addres: " + addres,
-        "gender: " + gender,
-        "surname: " + surname,
-        "birthday: " + birthday,
-        "course: " + course,
-        "divition: " + divition);
-               // INSERT INTO students(name_s, surname, dni, birthday, address, gender, id_course, id_divi, user_id) 
-            //VALUES ('Ayrton', 'Miotti', 45095310, '2004-01-29', 'Monte 1305', 'M', 7, 1, 1);
-                
-    connection.query('INSERT INTO students (name_s, surname, dni, birthday, address, gender, id_course, id_divi, user_id) VALUES = ?', 
-        {name_s:Sname, surname:surname, dni:dni, birthday:birthday, addres:addres, gender:gender,  course:course, divition:divition, user_id:5}, (error, results) =>{
+    console.log('');
+    console.log('--------------------------------');
+    console.log("Sname: " + Sname);
+    console.log("dni: " + dni);
+    console.log("addres: " + addres);
+    console.log("gender: " + gender);
+    console.log("surname: " + surname);
+    console.log("birthday: " + birthday);
+    console.log("course: " + course);
+    console.log("divition: " + divition);
+    console.log('');
+    console.log('--------------------------------');
+    console.log('INSERT INTO students (name_s, surname, dni, birthday, address, gender, id_course, id_divi, user_id) VALUES(' + "'" + Sname + "', '" + surname + "', " + dni + ", '" + birthday + "', '" + addres + ", '" + gender + "', " + course + ", " + divition + ", " + dni + ');');
+    console.log('--------------------------------');
+    console.log('');
+
+    const user_dni = dni;
+    const name_usr = String(Sname);
+    const surname_usr = String(surname);
+    const dni_usr = String(dni);
+    var usr = name_usr[0].toLowerCase() + surname_usr[0].toLowerCase() + dni_usr;
+    connection.query("INSERT INTO USERS (user_id, name_user, passwor, privilege) VALUES(" + user_dni + ", '" + usr + "', " + dni + ", '" + privilege + "')", (error, results) =>{
         if(error){
             console.log("El error que devolvió SQL es: " + error);
+            res.render('ADMIN-Students', {
+                alert: true,
+                alertTitle: "Error",
+                alertMessage: "El DNI ya se encuentra registrado en el sistema",
+                alertIcon: "error",
+                showConfirmButton: true,
+                timer: 1200,
+                ruta: '#AS-Add'
+            })
+            return;
+        }
+    })
+    connection.query('INSERT INTO students (name_s, surname, dni, birthday, address, gender, id_course, id_divi, user_id) VALUES(' 
+    + "'" + Sname + "', '" + surname + "', " + dni + ", '" + birthday + "', '" + addres + "', '" + gender + "', " + course + ", " + divition + ", " + dni + ');', (error, results) =>{
+        if(error){ 
+            console.log("El error que devolvió SQL es: " + error);
+            res.render('ADMIN-Students', {
+                alert: true,
+                alertTitle: "Error",
+                alertMessage: "El DNI ya se encuentra registrado en el sistema",
+                alertIcon: "error",
+                showConfirmButton: true,
+                timer: 1200,
+                ruta: '#AS-Add'
+            })
+            connection.query('DELETE FROM STUDENTS WHERE user_id =', [dni]);
+            connection.query('DELETE FROM USERS WHERE user_id =', [dni]);
             return;
         }
         else{
             console.log("Carga Exitosa");
-            const name_usr = String(Sname);
-            const surname_usr = String(surname);
-            const dni_usr = String(dni)
-            var usr = name_usr[0].toLowerCase() + surname_usr[0].toLowerCase() + dni_usr;
-            connection.query("INSERT INTO USERS (name_user, passwor, privilege) VALUES = ?", [usr, dni, privilege], (error, results) =>{
-                if(error){
-                    console.log("El error que devolvió SQL es: " + error);
-                    return;
-                }
-            })
+            req.session.Sadded = true;
+                res.render('ADMIN-Students', {
+                    alert: true,
+                    alertTitle: "Carga Exitosa",
+                    alertMessage: "¡Se agregó el Alumno correctamente!",
+                    alertIcon: "succes",
+                    showConfirmButton: false,
+                    timer: 1500,
+                    ruta: '#AS-Add'
+                });
         }
     })
 });
+
+app.get('/', (req, res)=>{
+    if(req.session.Sadded){
+        res.render('ADMIN-Students', {
+            added: true,
+            name: req.session.name
+        });
+    }
+})
 
 app.listen(3309, (req, res)=>{
     console.log("");

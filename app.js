@@ -80,9 +80,21 @@ app.get('/califications', (req, res)=>{
     res.render('califications');
 })
 
+app.get('/Students', (req, res)=>{
+    res.render('STUD-Home');
+})
 
+app.get('/Students%Califications', (req, res)=>{
+    res.render('STUD-Califications', {
+        login: true,
+        name: req.session.name});
+})
 
-
+app.get('/Students%Matters', (req, res)=>{
+    res.render('STUD-Matters', {
+        login: true,
+        name: req.session.name});
+})
 
 // 11 - Autenticación
 app.post('/auth', (req, res)=>{
@@ -94,7 +106,7 @@ app.post('/auth', (req, res)=>{
                 console.log("El error que devolvió SQL es: " + error);
                 return;
             }
-            
+
             if (results[0] === undefined){
                 res.render('login', {
                     alert: true,
@@ -167,9 +179,10 @@ app.post('/auth', (req, res)=>{
 // 12 - Auth pages
 app.get('/', (req, res)=>{
     if(req.session.loggedin1){
-        res.render('student_home', {
+        res.render('STUD-Home', {
             login: true,
-            name: req.session.name
+            name: req.session.name,
+            verify: true
         });
     }
     if(req.session.loggedin2){

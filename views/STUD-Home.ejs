@@ -1,0 +1,129 @@
+DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="resources/Assets/GG-corto.ico" class="rel">
+    <link rel="stylesheet" href="resources/css/normalize.css"/>
+    <link rel="stylesheet" href="resources/css/style.css"/>
+    <title>Home</title>
+  </head>
+  <body class="hidden">
+    <header class="header">
+      <nav class="nav">
+        <a href="#" class="logo nav-link">
+          <img class="logo-icon" src="resources/Assets/logo-cor.png" alt="Gary Goodsped">
+        </a>
+        <button class="nav-toggle" aria-label="Abrir menú">
+          <i class="fas fa-bars"></i>
+        </button>
+        <ul class="nav-menu">
+          <li class="nav-menu-item">
+            <a href="home" class="nav-menu-link nav-link">Inicio</a>
+          </li>
+          <li class="nav-menu-item">
+            <a href="login" class="nav-menu-link nav-link">Autogestión</a>
+          </li>
+          <li class="nav-menu-item">
+            <a href="#" class="nav-menu-link nav-link">Sobre nosotros</a>
+          </li>
+          <li class="nav-menu-item">
+            <a href="#" class="nav-menu-link nav-link nav-menu-link_active"
+              >Contactanos</a
+            >
+          </li>
+        </ul>
+      </nav>
+    </header>
+    <!- Fin del Header ->
+
+    <!- Menú Lateral Desplegable ->
+    <div id="sidemenu" class="menu-collapsed">
+      <!- Header ->
+      <div id="header">
+        <div id="menu-btn">
+          <div class="btn-hamburger"></div>
+          <div class="btn-hamburger"></div>
+          <div class="btn-hamburger"></div>
+        </div>
+        <div id="title"><span>Gary Goodsped</span></div>
+      </div>
+  
+      <!- PERFIL ->
+      <div id="profile">
+        <div id="photo"><img src="resources/Assets/ayrton.png" alt="Usuario"></div>
+        <div id="name">
+          <% if(login) { %>
+            <span><%= name %></span>
+            <% } %>
+          <div class="icon-edit">
+            <a href="#">
+              <img class="EditIcon" src="resources/Assets/EditIcon.svg" alt="Edit Profile">
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!- ITEMS ->
+      <div id="menu-items">
+        <div class="item">
+          <a href="Students%Califications" id="Btn1">
+            <div class="icon first-icon">
+              <img src="resources/Assets/matters.png" alt="Materias">
+            </div>
+            <div class="title">
+              <span>Calificaciones</span>
+            </div>
+          </a>
+        </div>
+
+        <div class="item separator"></div>
+
+        <div class="item">
+          <a href="Students%Matters" id='Btn2'>
+            <div class="icon">
+              <img src="resources/Assets/matters/(3).png" alt="Materias">
+            </div>
+            <div class="title">
+              <span>Materias</span>
+            </div>
+          </a>
+        </div>
+
+        <div class="item separator"></div>
+
+        <div class="item">
+          <a href="" id="Btn3">
+            <div class="icon">
+              <img src="resources/Assets/matters.png" alt="">
+            </div>
+            <div class="title">
+              <span>Nombre del icono</span>
+            </div>
+          </a>
+        </div>
+
+
+        <div class="item separator"></div>
+
+        <div class="item close">
+          <a class="exitLink" href="login">
+            <div class="icon">
+              <img class="ExitIcon" src="resources/Assets/exit.png" alt="Cerrar Sesión" style="width: 25px;">
+            </div>
+            <div class="title exitText">
+              <span class="exitText">Cerrar Sesión</span>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+    <!- Fin Menú Lateral Desplegable ->
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js">
+    
+    </script>
+    <script src="resources/js/main.js"></script>
+    </body>
+  </html>

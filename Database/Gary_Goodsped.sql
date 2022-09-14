@@ -6,6 +6,7 @@ CREATE TABLE if not exists USERS(
 user_id INT,
 name_user VARCHAR(30),
 passwor VARCHAR(30),
+remember BOOLEAN,
 privilege VARCHAR(30),
 PRIMARY KEY(user_id));
 

@@ -480,16 +480,19 @@ body {
 }
 
 /*Libreta de Alumnos*/
-
-
-
-
-#ShSec1 table {
-  border: 1px solid red;
-  border-collapse: collapse;
-  margin-top: 5%;
-  margin-bottom: 2%;
+.tableContainer{
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
+
+.body-expanded .tableContainer{
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding-left: 1%;
+}
+
 
 td {
   text-align: center;
@@ -517,10 +520,10 @@ tbody tr:nth-child(2n+1) {
 
 /* BOTONES MATERIAS */
 .matters{
-  position: absolute;
+  display: flex;
   width: 100%;
   height: 100%;
-  padding-left: 22%;
+  justify-content: center;
 }
 
 
@@ -1089,7 +1092,7 @@ tbody tr:nth-child(2n+1) {
   align-items: center;
   text-align: center;
   align-content: center;
-  top: 590px;
+  top: 580px;
   display: inline-block;
   padding: var(--padd-ab) var(--padd-id);
   color: #fff;
@@ -1323,6 +1326,7 @@ tbody tr:nth-child(2n+1) {
   text-align: center;
   font-size: 35px;
   margin: 0.5% auto;
+  color: white;
 }
 
 .Add-span{
@@ -1337,13 +1341,14 @@ tbody tr:nth-child(2n+1) {
 .Add-l-container{
   height: 65vh;
   width: 40%;
-  background-color: #444;
   display: flex;
   flex-direction: column;
   align-content: space-around;
   flex-wrap: wrap;
   justify-content: space-evenly;
   align-items: flex-start;
+  background: linear-gradient(90.27deg, #114EEB 0.26%, #5A78C4 99.8%);
+    border-radius: 40px 0px 0px 0px;
 }
 
 .group-gender{
@@ -1357,13 +1362,14 @@ tbody tr:nth-child(2n+1) {
 .Add-r-container{
   height: 65vh;
   width: 40%;
-  background-color: #777;
   display: flex;
   flex-direction: column;
   align-content: space-around;
   flex-wrap: wrap;
   justify-content: space-evenly;
   align-items: flex-start;
+  background: linear-gradient(270deg, #72a6d7 3.09%, #5A78C3 97.82%);
+  border-radius: 0px 40px 0px 0px;
 }
 
 .date-input{
@@ -1383,13 +1389,15 @@ tbody tr:nth-child(2n+1) {
 .Add-b-container{
   height: 10vh;
   width: 80%;
-  background-color: #ad5;
   padding: 10px 1%;
   display: flex;
   flex-direction: row;
   justify-content: flex-end;
   align-items: center;
   margin-left: 10%;
+  background: linear-gradient(180deg, #5985F3 0%, #0049FF 100%);
+  border-bottom-right-radius: 30px;
+  border-bottom-left-radius: 30px;
 }
 
 .btn-cancel{
@@ -1404,7 +1412,7 @@ tbody tr:nth-child(2n+1) {
 
 .btn-save{
   color: white;
-  background-color: rgb(25, 179, 64);
+  background-color: #0E2869;
   height: 90%;
   width: 150px;
   border-radius: 15px;

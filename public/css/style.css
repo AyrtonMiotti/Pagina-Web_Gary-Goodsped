@@ -1332,6 +1332,26 @@ tbody tr:nth-child(2n+1) {
 .Add-span{
   font-size: 20px;
 }
+
+.aster{
+  font-size: 20px;
+  color: rgb(124, 41, 41);
+}
+
+.hideInput{
+  opacity: 0;
+}
+
+.group-aster{
+  height: 100%;
+  margin-top: 15%;
+  display: flex;
+  justify-content: flex-end;
+  padding-right: 35px;
+  align-content: flex-start;
+  align-items: center;
+}
+
 .Add-t-container{
   display: flex;
   flex-direction: row;

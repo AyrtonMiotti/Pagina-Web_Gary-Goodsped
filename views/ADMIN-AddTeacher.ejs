@@ -134,22 +134,22 @@
 
     <div class="add-container">
         <form action="/addStudent" method="post" class="form-add-s" >
-            <span class="Add-tittle">AGREGAR Profesor</span>
+            <span class="Add-tittle">AGREGAR ALUMNO</span>
             <div class="Add-t-container">
                 <div class="Add-l-container">
 
                     <div class="group-name">
-                        <span class="Add-span name-txt">Nombre:</span>
+                        <span class="Add-span name-txt">Nombre:<b class="aster"> *</b></span>
                         <input class="add_name" name="add_name" type="text" placeholder="Ingrese el/los Nombres" required>
                     </div>
 
                     <div class="group-dni">
-                        <span class="Add-span dni-txt">DNI:</span>
+                        <span class="Add-span dni-txt">DNI:<b class="aster"> *</b></span>
                         <input class="add_dni" name="add_dni" type="number" placeholder="Ingrese el DNI" required>
                     </div>
 
                     <div class="group-addres">
-                        <span class="Add-span addres-txt">Dirección:</span>
+                        <span class="Add-span addres-txt">Dirección:<b class="aster"> *</b></span>
                         <input class="add_addres" name="add_addres" type="text" placeholder="Ingrese la Dirección" required>
                     </div>
 
@@ -164,18 +164,13 @@
 
                 <div class="Add-r-container">
                     <div class="group-surname">
-                        <span class="Add-span surname-txt">Apellido:</span>
+                        <span class="Add-span surname-txt">Apellido: <b class="aster"> *</b></span>
                         <input class="add_surname" name="add_surname" type="text" placeholder="Ingrese el/los Apellidos" required>
                     </div>
 
                     <div class="group-date">
-                        <span class="Add-span date-txt">Fecha Nacimiento:</span>
+                        <span class="Add-span date-txt">Fecha Nacimiento:<b class="aster"> *</b></span>
                         <input class="add_date" name="add_date" type="date" required>
-                    </div>
-
-                    <div class="group-surname">
-                        <span class="Add-span surname-txt">Apellido:</span>
-                        <input class="add_surname" name="add_surname" type="text" placeholder="Ingrese el/los Apellidos" required>
                     </div>
 
                     <div class="AS-course">
@@ -196,9 +191,13 @@
                                 <option value="2">B</option>
                                 <option value="3">C</option>
                             </select>
+                            <span><b class="aster">  *</b></span>
                         </div>
-                        
-                    </div>
+                        <div class="group-aster">
+                          <span class="Add-span surname-txt"><b class="aster"> * Obligatorio</b></span>
+                      </div>
+                  </div>
+
                 </div>
             </div>
             <div class="Add-b-container">

@@ -37,11 +37,11 @@ const connection = require('./Database/db');
 
 // 9 - Estableciendo las rutas
 app.get('/login', (req, res)=>{
-    res.render('login');
+    return res.render('login');
 })
 
 app.get('/home', (req, res)=>{
-    res.render('Home');
+    return res.render('Home');
 })
 
 app.get('/profile', (req, res)=>{
@@ -52,26 +52,26 @@ app.get('/profile', (req, res)=>{
 
 // ---RUTAS ADMIN ---
 app.get('/land', (req, res)=>{
-    res.render('ADMIN_Landing');
+    return res.render('ADMIN_Landing');
 })
 
 app.get('/Admin%Students', (req, res)=>{
-    res.render('ADMIN-Students');
+    return res.render('ADMIN-Students');
 })
 
 app.get('/Admin%Add%Student', (req, res)=>{
-    res.render('ADMIN-AddStudent');
+    return res.render('ADMIN-AddStudent');
 })
 
 app.get('/Admin%Edit%Student', (req, res)=>{
-    res.render('ADMIN-EditStudent');
+    return res.render('ADMIN-EditStudent');
 })
 
 app.get('/Admin%Remove%Student', (req, res)=>{
-    res.render('ADMIN-RemoveStudent');
+    return res.render('ADMIN-RemoveStudent');
 })
 app.get('/Admin%Teachers', (req, res)=>{
-    res.render('ADMIN-Teachers');
+    return res.render('ADMIN-Teachers');
 })
 
 // ---RUTAS TEACHERS
@@ -79,23 +79,27 @@ app.get('/Admin%Teachers', (req, res)=>{
 
 // ---RUTAS STUDENTS---
 app.get('/califications', (req, res)=>{
-    res.render('califications');
+    return res.render('califications');
 })
 
 app.get('/Students', (req, res)=>{
-    res.render('STUD-Home');
+    return res.render('STUD-Home');
 })
 
 app.get('/Students%Califications', (req, res)=>{
-    res.render('STUD-Califications', {
+    return res.render('STUD-Califications', {
         login: true,
         name: req.session.name});
 })
 
 app.get('/Students%Matters', (req, res)=>{
-    res.render('STUD-Matters', {
+    return res.render('STUD-Matters', {
         login: true,
         name: req.session.name});
+})
+
+app.get('/ppp', (req, res)=>{
+    return res.render('ppp');
 })
 
 // 11 - Autenticación
@@ -110,7 +114,7 @@ app.post('/auth', (req, res)=>{
             }
 
             if (results[0] === undefined){
-                res.render('login', {
+                return res.render('login', {
                     alert: true,
                     alertTitle: "Error",
                     alertMessage: "Usuario y/o contraseña incorrectos",
@@ -123,7 +127,7 @@ app.post('/auth', (req, res)=>{
             }
             else{
                 if (pass != results[0].passwor) {
-                    res.render('login', {
+                    return res.render('login', {
                         alert: true,
                         alertTitle: "Error",
                         alertMessage: "Usuario y/o contraseña incorrectos",
@@ -137,7 +141,7 @@ app.post('/auth', (req, res)=>{
                     req.session.name = results[0].name_user;
                     if (results[0].privilege == 'student') {
                         req.session.loggedin1 = true;
-                        res.render('login', {
+                        return res.render('login', {
                             alert: true,
                             alertTitle: "Conexión exitosa",
                             alertMessage: "¡Login correcto!",
@@ -149,7 +153,7 @@ app.post('/auth', (req, res)=>{
                     }
                     if (results[0].privilege == 'teacher') {
                         req.session.loggedin2 = true;
-                        res.render('login', {
+                        return res.render('login', {
                             alert: true,
                             alertTitle: "Conexión exitosa",
                             alertMessage: "¡Login correcto!",
@@ -161,7 +165,7 @@ app.post('/auth', (req, res)=>{
                     }
                     if (results[0].privilege == 'admin') {
                         req.session.loggedin3 = true;
-                        res.render('login', {
+                        return res.render('login', {
                             alert: true,
                             alertTitle: "Conexión exitosa",
                             alertMessage: "¡Login correcto!",
@@ -177,28 +181,48 @@ app.post('/auth', (req, res)=>{
         })
 });
 
-
 // 12 - Auth pages
 app.get('/', (req, res)=>{
     if(req.session.loggedin1){
-        res.render('STUD-Home', {
+        return res.render('STUD-Home', {
             login: true,
             name: req.session.name,
             verify: true
         });
     }
     if(req.session.loggedin2){
-        res.render('teacher_home', {
+        return res.render('teacher_home', {
             login: true,
             name: req.session.name
         });
     }
     if(req.session.loggedin3){
-        res.render('ADMIN_Landing', {
+        return res.render('ADMIN_Landing', {
             login: true,
             name: req.session.name
         });
     }
+})
+
+// 13.0.1 IMAGES
+const path = require('path');
+const multer = require('multer');
+app.use('/public/Assets/uploads', express.static(path.join(__dirname, 'uploads')));
+
+const storage = multer.diskStorage({
+    destination:(req, file, callback)=>{
+        callback(null, 'uploads')
+    },
+
+    filename:(req, file, callback) =>{
+        callback(null, file.originalname)
+    }
+});
+
+const upload = multer({storage});
+
+app.post('/file', upload.single('file'), (req, res, next)=>{
+    const file = req.params
 })
 
 // 13 - ADMIN | Students
@@ -237,7 +261,7 @@ app.post('/addStudent', (req, res)=>{
     connection.query("INSERT INTO USERS (user_id, name_user, passwor, privilege) VALUES(" + user_dni + ", '" + usr + "', " + dni + ", '" + privilege + "')", (error, results) =>{
         if(error){
             console.log("El error que devolvió SQL es: " + error);
-            res.render('ADMIN-Students', {
+            return res.render('ADMIN-Students', {
                 alert: true,
                 alertTitle: "Error",
                 alertMessage: "El DNI ya se encuentra registrado en el sistema",
@@ -246,14 +270,24 @@ app.post('/addStudent', (req, res)=>{
                 timer: 1200,
                 ruta: '#AS-Add'
             })
-            return;
         }
     })
+    if(gender == "M"){
+        const imgProfile = 'resources/Assets/Photo-MS.png';
+    }
+
+    else{
+        if(gender == "F"){
+            const imgProfile = 'resources/Assets/Photo-WS.png';
+        }
+    }
     connection.query('INSERT INTO students (name_s, surname, dni, birthday, address, gender, id_course, id_divi, user_id) VALUES(' 
     + "'" + Sname + "', '" + surname + "', " + dni + ", '" + birthday + "', '" + addres + "', '" + gender + "', " + course + ", " + divition + ", " + dni + ');', (error, results) =>{
         if(error){ 
             console.log("El error que devolvió SQL es: " + error);
-            res.render('ADMIN-Students', {
+            connection.query('DELETE FROM STUDENTS WHERE user_id =', [dni]);
+            connection.query('DELETE FROM USERS WHERE user_id =', [dni]);
+            return res.render('ADMIN-Students', {
                 alert: true,
                 alertTitle: "Error",
                 alertMessage: "El DNI ya se encuentra registrado en el sistema",
@@ -262,14 +296,11 @@ app.post('/addStudent', (req, res)=>{
                 timer: 1200,
                 ruta: '#AS-Add'
             })
-            connection.query('DELETE FROM STUDENTS WHERE user_id =', [dni]);
-            connection.query('DELETE FROM USERS WHERE user_id =', [dni]);
-            return;
         }
         else{
             console.log("Carga Exitosa");
             req.session.Sadded = true;
-                res.render('ADMIN-Students', {
+                return res.render('ADMIN-Students', {
                     alert: true,
                     alertTitle: "Carga Exitosa",
                     alertMessage: "¡Se agregó el Alumno correctamente!",
@@ -284,7 +315,7 @@ app.post('/addStudent', (req, res)=>{
 
 app.get('/', (req, res)=>{
     if(req.session.Sadded){
-        res.render('ADMIN-Students', {
+        return res.render('ADMIN-Students', {
             added: true,
             name: req.session.name
         });

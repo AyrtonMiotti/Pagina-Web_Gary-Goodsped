@@ -133,28 +133,29 @@
     <!- Fin Menú Lateral Desplegable ->
 
     <div class="edit-container">
-        <form action="#" class="form-edit-s">
+        <form action="/editStudent" method="post" class="form-Edit-s" >
             <span class="Edit-tittle">EDITAR ALUMNO</span>
             <div class="Edit-t-container">
                 <div class="Edit-l-container">
+
                     <div class="group-name">
                         <span class="Edit-span name-txt">Nombre:</span>
-                        <input class="name-input" type="text" placeholder="Ingrese el/los Nombres" required>
+                        <input class="edit_name" name="edit_name" type="text" placeholder="Ingrese el/los Nombres" required>
                     </div>
 
                     <div class="group-dni">
                         <span class="Edit-span dni-txt">DNI:</span>
-                        <input class="dni-input" type="number" placeholder="Ingrese el DNI" required>
+                        <input class="edit_dni" name="edit_dni" type="number" placeholder="Ingrese el DNI" required>
                     </div>
 
                     <div class="group-addres">
                         <span class="Edit-span addres-txt">Dirección:</span>
-                        <input class="addres-input" type="text" placeholder="Ingrese la Dirección" required>
+                        <input class="edit_addres" name="edit_addres" type="text" placeholder="Ingrese la Dirección" required>
                     </div>
 
                     <div class="group-gender">
                         <span class="Edit-span gender-txt">Género:</span>
-                        <select name="Género" id="gender-input">
+                        <select name="edit_gender" class="edit_gender" id="edit_gender">
                             <option value="M">Masculino</option>
                             <option value="F">Femenino</option>
                         </select>
@@ -164,31 +165,36 @@
                 <div class="Edit-r-container">
                     <div class="group-surname">
                         <span class="Edit-span surname-txt">Apellido:</span>
-                        <input class="surname-input" type="text" placeholder="Ingrese el/los Apellidos" required>
+                        <input class="edit_surname" name="edit_surname" type="text" placeholder="Ingrese el/los Apellidos" required>
                     </div>
 
                     <div class="group-date">
                         <span class="Edit-span date-txt">Fecha Nacimiento:</span>
-                        <input class="date-input" type="date" required>
+                        <input class="edit_date" name="edit_date" type="date" required>
+                    </div>
+
+                    <div class="group-surname">
+                        <span class="Edit-span surname-txt">Apellido:</span>
+                        <input class="edit_surname" name="edit_surname" type="text" placeholder="Ingrese el/los Apellidos" required>
                     </div>
 
                     <div class="AS-course">
                         <div class="group-course">
                             <span class="Edit-span course-txt">Curso:</span>
-                            <select name="Curso" id="course-input" class="course-input">
-                                <option value="Primer Año">Primer Año</option>
-                                <option value="Segundo Año">Segundo Año</option>
-                                <option value="Tercer Año">Tercer Año</option>
-                                <option value="Cuarto Año">Cuarto Año</option>
-                                <option value="Quinto Año">Quinto Año</option>
-                                <option value="Sexto Año">Sexto Año</option>
-                                <option value="Séptimo Año">Séptimo Año</option>
+                            <select name="edit_course" class="edit_course" id="course-input">
+                                <option value="1">Primer Año</option>
+                                <option value="2">Segundo Año</option>
+                                <option value="3">Tercer Año</option>
+                                <option value="4">Cuarto Año</option>
+                                <option value="5">Quinto Año</option>
+                                <option value="6">Sexto Año</option>
+                                <option value="7">Séptimo Año</option>
                             </select>
                             <span class="Edit-span course-divition">División:</span>
-                            <select name="División" id="divition-input">
-                                <option value="A">A</option>
-                                <option value="B">B</option>
-                                <option value="C">C</option>
+                            <select name="edit_divition" class="edit_divition" id="divition-input">
+                                <option value="1">A</option>
+                                <option value="2">B</option>
+                                <option value="3">C</option>
                             </select>
                         </div>
                         
@@ -197,7 +203,7 @@
             </div>
             <div class="Edit-b-container">
                 <input class="btn-cancel" type="button" value="Cancelar">
-                <input class="btn-save" type="button" value="Guardar">
+                <input class="btn-save" type="submit" value="Guardar">
             </div>
         </form>
     </div>

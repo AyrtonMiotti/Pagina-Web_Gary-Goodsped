@@ -1533,6 +1533,8 @@ tbody tr:nth-child(2n+1) {
 }
 
 
+
+
 .AS-Remove{
   margin-top: var(--hnav);
   margin-left: 180px;
@@ -1544,6 +1546,414 @@ tbody tr:nth-child(2n+1) {
 
 /* -------- MODIFY STUDENTS --------*/
 
+/*--------------------------  ADMIN STYLES --------------------------*/
+.body-landing{
+  font-family: "Roboto", sans-serif;
+  height: 100vh;
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+}
+
+.AS-Home{
+  height: 100vh;
+  width: 100% - var(--width-colap);
+  margin: 0;
+  color: wheat;
+}
+
+#text-btn {
+  font-size: 3rem;
+  color: #fff;
+  position: absolute;
+  left: 50%;
+  top: 20%;
+  transform: translateX(-50%);
+  white-space: nowrap;
+}
+
+.btn-select {
+  color: #fff;
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  left: 50%;
+  top: 40%;
+  transform: translateX(-50%);
+  border: #fff solid 0.2rem;
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  width: 15rem;
+  padding: 1.5rem;
+}
+
+.split.left .btn-select:hover {
+  background-color: var(--left-btn-hover-color);
+  border-color: var(--left-btn-hover-color);
+}
+
+.split.right .btn-select:hover {
+  background-color: var(--right-btn-hover-color);
+  border-color: var(--right-btn-hover-color);
+}
+
+.container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background: #333;
+}
+
+.split {
+  position: absolute;
+  width: 50%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.split.left {
+  left: 0;
+  background: var(--bg-img-l)
+    no-repeat center / cover;
+}
+
+.split.left::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: var(--left-bg-color);
+}
+
+.split.right {
+  right: 0;
+  background: var(--bg-img-r)
+    no-repeat center / cover;
+}
+
+.split.right::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: var(--right-bg-color);
+}
+
+.split.left,
+.split.right,
+.split.left::before,
+.split.right::before {
+  transition: all var(--transition-speed) ease-in-out;
+}
+
+.hover-left .left {
+  width: var(--hover-width);
+}
+
+.hover-left .right {
+  width: var(--minimize-width);
+}
+
+.hover-right .right {
+  width: var(--hover-width);
+}
+
+.hover-right .left {
+  width: var(--minimize-width);
+}
+
+@media (max-width: 800px) {
+  #text-btn {
+    font-size: 2rem;
+    top: 30%;
+  }
+  .btn-select {
+    padding: 1.2rem;
+    width: 12rem;
+  }
+}
+
+
+/* -------- ADMIN | STUDENTS -------- */
+
+/* -------- ADD STUDENTS --------*/
+.AS-Add{
+  padding-top: var(--hnav);
+  margin-top: var(--hnav);
+  margin-left: 180px;
+  height: 100vh;
+  width: 100%;
+  overflow: hidden;
+  color: white;
+}
+
+.add-container{
+  margin: 1% 8%;
+}
+
+.form-add-s{
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+.Add-tittle{
+  text-align: center;
+  font-size: 35px;
+  margin: 0.5% auto;
+  color: white;
+}
+
+.Add-span{
+  font-size: 20px;
+}
+
+.aster{
+  font-size: 20px;
+  color: rgb(124, 41, 41);
+}
+
+.hideInput{
+  opacity: 0;
+}
+
+.group-aster{
+  height: 100%;
+  margin-top: 15%;
+  display: flex;
+  justify-content: flex-end;
+  padding-right: 35px;
+  align-content: flex-start;
+  align-items: center;
+}
+
+.Add-t-container{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.Add-l-container{
+  height: 65vh;
+  width: 40%;
+  display: flex;
+  flex-direction: column;
+  align-content: space-around;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: flex-start;
+  background: linear-gradient(90.27deg, #114EEB 0.26%, #5A78C4 99.8%);
+    border-radius: 40px 0px 0px 0px;
+}
+
+.group-gender{
+  display: flex;
+}
+
+#gender-input{
+  margin: 0 10px;
+}
+
+.Add-r-container{
+  height: 65vh;
+  width: 40%;
+  display: flex;
+  flex-direction: column;
+  align-content: space-around;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: flex-start;
+  background: linear-gradient(270deg, #72a6d7 3.09%, #5A78C3 97.82%);
+  border-radius: 0px 40px 0px 0px;
+}
+
+.date-input{
+  text-transform: uppercase;
+}
+
+.Add-span{
+  display: block;
+}
+
+
+.group-course{
+  display: flex;
+}
+
+
+.Add-b-container{
+  height: 10vh;
+  width: 80%;
+  padding: 10px 1%;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+  margin-left: 10%;
+  background: linear-gradient(180deg, #5985F3 0%, #0049FF 100%);
+  border-bottom-right-radius: 30px;
+  border-bottom-left-radius: 30px;
+}
+
+.btn-cancel{
+  margin: 0 10px;
+  color: white;
+  background-color: rgb(179, 25, 25);
+  height: 90%;
+  width: 150px;
+  border-radius: 15px;
+  font-size: 20px;
+}
+
+.btn-save{
+  color: white;
+  background-color: #0E2869;
+  height: 90%;
+  width: 150px;
+  border-radius: 15px;
+  font-size: 20px;
+}
+
+/* -------- EDIT STUDENTS --------*/
+
+.edit-container{
+  margin: 1% 8%;
+}
+
+.form-Edit-s{
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+.Edit-tittle{
+  text-align: center;
+  font-size: 35px;
+  margin: 0.5% auto;
+  color: white;
+}
+
+.Edit-span{
+  font-size: 20px;
+}
+
+.aster{
+  font-size: 20px;
+  color: rgb(124, 41, 41);
+}
+
+.hideInput{
+  opacity: 0;
+}
+
+.group-aster{
+  height: 100%;
+  margin-top: 15%;
+  display: flex;
+  justify-content: flex-end;
+  padding-right: 35px;
+  align-content: flex-start;
+  align-items: center;
+}
+
+.Edit-t-container{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.Edit-l-container{
+  height: 65vh;
+  width: 40%;
+  display: flex;
+  flex-direction: column;
+  align-content: space-around;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: flex-start;
+  background: linear-gradient(90.27deg, #114EEB 0.26%, #5A78C4 99.8%);
+    border-radius: 40px 0px 0px 0px;
+}
+
+.group-gender{
+  display: flex;
+}
+
+#gender-input{
+  margin: 0 10px;
+}
+
+.Edit-r-container{
+  height: 65vh;
+  width: 40%;
+  display: flex;
+  flex-direction: column;
+  align-content: space-around;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: flex-start;
+  background: linear-gradient(270deg, #72a6d7 3.09%, #5A78C3 97.82%);
+  border-radius: 0px 40px 0px 0px;
+}
+
+.date-input{
+  text-transform: uppercase;
+}
+
+.Edit-span{
+  display: block;
+}
+
+
+.group-course{
+  display: flex;
+}
+
+
+.Edit-b-container{
+  height: 10vh;
+  width: 80%;
+  padding: 10px 1%;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+  margin-left: 10%;
+  background: linear-gradient(180deg, #5985F3 0%, #0049FF 100%);
+  border-bottom-right-radius: 30px;
+  border-bottom-left-radius: 30px;
+}
+
+.btn-cancel{
+  margin: 0 10px;
+  color: white;
+  background-color: rgb(179, 25, 25);
+  height: 90%;
+  width: 150px;
+  border-radius: 15px;
+  font-size: 20px;
+}
+
+.btn-save{
+  color: white;
+  background-color: #0E2869;
+  height: 90%;
+  width: 150px;
+  border-radius: 15px;
+  font-size: 20px;
+
+/* -------- REMOVE STUDENTS --------*/
+.AS-Remove{
+  margin-top: var(--hnav);
+  margin-left: 180px;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  color: white;
+}
 
 
 /*-------- EDIT PROFILE --------*/
@@ -1619,5 +2029,5 @@ tbody tr:nth-child(2n+1) {
   border-radius: 10px;
   color: white;
   height: 15%;
-  
+
 }

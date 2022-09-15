@@ -45,7 +45,9 @@ app.get('/home', (req, res)=>{
 })
 
 app.get('/profile', (req, res)=>{
-    return res.render('Profile');
+    res.render('Profile', {
+        login: true,
+        name: req.session.name});
 })
 
 // ---RUTAS ADMIN ---

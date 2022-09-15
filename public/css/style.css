@@ -1332,6 +1332,26 @@ tbody tr:nth-child(2n+1) {
 .Add-span{
   font-size: 20px;
 }
+
+.aster{
+  font-size: 20px;
+  color: rgb(124, 41, 41);
+}
+
+.hideInput{
+  opacity: 0;
+}
+
+.group-aster{
+  height: 100%;
+  margin-top: 15%;
+  display: flex;
+  justify-content: flex-end;
+  padding-right: 35px;
+  align-content: flex-start;
+  align-items: center;
+}
+
 .Add-t-container{
   display: flex;
   flex-direction: row;
@@ -1513,8 +1533,6 @@ tbody tr:nth-child(2n+1) {
 }
 
 
-
-
 .AS-Remove{
   margin-top: var(--hnav);
   margin-left: 180px;
@@ -1525,3 +1543,81 @@ tbody tr:nth-child(2n+1) {
 }
 
 /* -------- MODIFY STUDENTS --------*/
+
+
+
+/*-------- EDIT PROFILE --------*/
+.ProfileBody{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+}
+
+.ProfileBody span{
+  color: white;
+}
+
+.Profile-title{
+  color: wheat;
+}
+
+.PEdit-form{
+  width: 100%;
+  height: 100%;
+  display: contents;
+}
+
+.profile-container{
+  background: #020E18;
+  border-radius: 50px;
+  height: 75%;
+  width: 50%;
+  margin-top: 20px;
+}
+
+.PU_image{
+  display: flex;
+  align-items: center;
+  align-content: center;
+  justify-content: center;
+  margin-bottom: 20px;
+  margin-top: 5px;
+}
+
+.PU_IP{
+  width: 30%;
+  height: 30%;
+  border-radius: 50%;
+}
+
+.Pcontainer-Inp{
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
+}
+
+
+
+
+.PE-btnAct{
+  background: #020E18;
+  border: 1px solid #114EEB;
+  border-radius: 10px;
+  color: white;
+  height: 15%;
+  
+}
+
+.PE-btnCan{
+  background: #020E18;
+  border: 1px solid #114EEB;
+  border-radius: 10px;
+  color: white;
+  height: 15%;
+  
+}

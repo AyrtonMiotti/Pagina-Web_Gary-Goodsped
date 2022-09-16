@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="resources/css/style.css"/>
     <title>ADMIN | Students</title>
 </head>
-<body class="hidden">
+<body class="hidden BRemoveS">
     <!- Inicio del Header ->
     <header class="header">
         <nav class="nav">
@@ -53,7 +53,7 @@
     
         <!- PERFIL ->
         <div id="profile">
-          <div id="photo"><img src="resources/Assets/ayrton.png" alt="Usuario"></div>
+          <div id="photo"><img src="resources/Assets/01-ADMIN.png" alt="Usuario"></div>
           <div id="name">
             <span>ADMIN</span>
             <div class="icon-edit">
@@ -69,7 +69,7 @@
           <div class="item">
             <a href="Admin%Students" id="Btn0">
               <div class="icon first-icon">
-                <img src="resources/Assets/add-usr.png" alt="Materias">
+                <img src="resources/Assets/10-HOME.png" alt="Materias">
               </div>
               <div class="title">
                 <span>Home</span>
@@ -133,75 +133,21 @@
     <!- Fin Menú Lateral Desplegable ->
 
     <div class="remove-container">
-        <form action="#" class="form-edit-s">
-            <span class="Edit-tittle">ELIMINAR ALUMNO</span>
-            <div class="Edit-t-container">
-                <div class="Edit-l-container">
-                    <div class="group-name">
-                        <span class="Edit-span name-txt">Nombre:</span>
-                        <input class="name-input" type="text" placeholder="Ingrese el/los Nombres" required>
-                    </div>
-
-                    <div class="group-dni">
-                        <span class="Edit-span dni-txt">DNI:</span>
-                        <input class="dni-input" type="number" placeholder="Ingrese el DNI" required>
-                    </div>
-
-                    <div class="group-addres">
-                        <span class="Edit-span addres-txt">Dirección:</span>
-                        <input class="addres-input" type="text" placeholder="Ingrese la Dirección" required>
-                    </div>
-
-                    <div class="group-gender">
-                        <span class="Edit-span gender-txt">Género:</span>
-                        <select name="Género" id="gender-input">
-                            <option value="M">Masculino</option>
-                            <option value="F">Femenino</option>
-                        </select>
-                    </div>
-                </div>
-
-                <div class="Edit-r-container">
-                    <div class="group-surname">
-                        <span class="Edit-span surname-txt">Apellido:</span>
-                        <input class="surname-input" type="text" placeholder="Ingrese el/los Apellidos" required>
-                    </div>
-
-                    <div class="group-date">
-                        <span class="Edit-span date-txt">Fecha Nacimiento:</span>
-                        <input class="date-input" type="date" required>
-                    </div>
-
-                    <div class="AS-course">
-                        <div class="group-course">
-                            <span class="Edit-span course-txt">Curso:</span>
-                            <select name="Curso" id="course-input" class="course-input">
-                                <option value="Primer Año">Primer Año</option>
-                                <option value="Segundo Año">Segundo Año</option>
-                                <option value="Tercer Año">Tercer Año</option>
-                                <option value="Cuarto Año">Cuarto Año</option>
-                                <option value="Quinto Año">Quinto Año</option>
-                                <option value="Sexto Año">Sexto Año</option>
-                                <option value="Séptimo Año">Séptimo Año</option>
-                            </select>
-                            <span class="Edit-span course-divition">División:</span>
-                            <select name="División" id="divition-input">
-                                <option value="A">A</option>
-                                <option value="B">B</option>
-                                <option value="C">C</option>
-                            </select>
-                        </div>
-                        
-                    </div>
-                </div>
-            </div>
-            <div class="Edit-b-container">
-                <input class="btn-cancel" type="button" value="Cancelar">
-                <input class="btn-save" type="button" value="Guardar">
+        <form action="/RemoveStudent" method="post" class="form-remove-s">
+            <span class="Remove-tittle">ELIMINAR ALUMNO</span>
+            <div class="removeAll-container">
+              <div class="searchBar">
+                <input type="search" name="search" id="input_search">
+                <button class="searchBtn"><img class="searchIcon" src="resources/Assets/search.png" alt="search"></button>
+              </div>
+              <div class="btnContainer">
+                <input class="btnRemove" type="submit" value="Eliminar">
+              </div>
             </div>
         </form>
     </div>
     <script src="resources/js/main.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     
     <% if(typeof alert != "undefined") { %>
       <script>

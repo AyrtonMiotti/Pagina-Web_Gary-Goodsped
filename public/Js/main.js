@@ -22,4 +22,9 @@ btn.addEventListener("click", e =>{
 });
 
 
+const editUsr = document.querySelector('PBtn-Eusr');
+const inputUsr = document.querySelector('#PIUser');
+editUsr.addEventListener("click", e =>{
+  $(inputUsr).css("pointer-events", "none");
+});
 

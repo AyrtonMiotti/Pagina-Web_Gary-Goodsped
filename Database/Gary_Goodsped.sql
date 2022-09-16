@@ -6,26 +6,26 @@ CREATE TABLE if not exists USERS(
 user_id INT,
 name_user VARCHAR(30),
 passwor VARCHAR(30),
-remember BOOLEAN,
 privilege VARCHAR(30),
 PRIMARY KEY(user_id));
 
 CREATE TABLE if not exists Teachers(
-id_teacher INT auto_increment,
 name_t VARCHAR(50),
 surname VARCHAR(50),
 dni INT,
 birthday DATE,
 address VARCHAR(30),
+gender VARCHAR(1),
+descrip VARCHAR(150),
 user_id INT,
 FOREIGN KEY (user_id) REFERENCES USERS(user_id),
-PRIMARY KEY(id_teacher));
+PRIMARY KEY(dni));
 
 CREATE TABLE if not exists Matter(
 id_matter INT auto_increment,
 name_matter VARCHAR(30),
-id_teacher INT,
-FOREIGN KEY (id_teacher) REFERENCES Teachers(id_teacher), -- or DNI
+dni INT,
+FOREIGN KEY (dni) REFERENCES Teachers(dni), -- or DNI
 PRIMARY KEY(id_matter));
 
 CREATE TABLE if not exists Divition(
@@ -64,7 +64,7 @@ admin = Administrador
 student = Estudiante
 teacher = Profesor
 */
-
+DELETE FROM USERS;
 INSERT into USERS (user_id, name_user, passwor, privilege) VALUES
 (0, 'admin', 'admin', 'admin'),
 (45095310, 'Ayrton', 'admin', 'admin'),
@@ -83,14 +83,15 @@ INSERT INTO Courses(name_c) VALUES
 	('Quinto Año'),
 	('Sexto Año'),
 	('Séptimo Año');
+
+DELETE FROM Students;
 INSERT INTO Students(name_s, surname, dni, birthday, address, gender, id_course, id_divi, user_id) 
 	VALUES ('Ayrton', 'Miotti', 45095310, '2004-01-29', 'Monte 1305', 'M', 7, 1, 1);
 SELECT * FROM Students;
 
-USE gary_goodsped;
-DELETE FROM STUDENTS WHERE user_id = 1 or user_id = 123 or user_id = 123456 or user_id = 12345678 or user_id = 12456789;
-DELETE FROM USERS WHERE user_id = 1 or user_id = 123 or user_id = 123456 or user_id = 12345678 or user_id = 12456789;
-SELECT * FROM Students;
+-- drop student
+SELECT name_s, surname, dni, id_course, id_divi FROM Students WHERE name_s = "Ayrton";
+DELETE FROM Students WHERE dni = 123;
 SELECT * FROM USERS;
 
 

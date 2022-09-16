@@ -74,12 +74,31 @@ app.get('/Admin%Teachers', (req, res)=>{
     return res.render('ADMIN-Teachers');
 })
 
-// ---RUTAS TEACHERS
+app.get('/Admin%Add%Teacher', (req, res)=>{
+    return res.render('ADMIN-AddTeacher');
+})
 
+app.get('/Admin%Edit%Teacher', (req, res)=>{
+    return res.render('ADMIN-EditTeacher');
+})
+
+app.get('/Admin%Remove%Teacher', (req, res)=>{
+    return res.render('ADMIN-RemoveTeacher');
+})
+// ---RUTAS TEACHERS
+app.get('/Teachers', (req, res)=>{
+    return res.render('teacher_home', {
+        login: true,
+        name: req.session.name});
+})
 
 // ---RUTAS STUDENTS---
 app.get('/califications', (req, res)=>{
     return res.render('califications');
+})
+
+app.get('/FAT', (req, res)=>{
+    return res.render('./matters/FAT.ejs'); //MATERIAS--
 })
 
 app.get('/Students', (req, res)=>{
@@ -147,7 +166,7 @@ app.post('/auth', (req, res)=>{
                             alertMessage: "¡Login correcto!",
                             alertIcon: "succes",
                             showConfirmButton: false,
-                            timer: 1500,
+                            timer: 900,
                             ruta: ''
                         });
                     }
@@ -159,8 +178,8 @@ app.post('/auth', (req, res)=>{
                             alertMessage: "¡Login correcto!",
                             alertIcon: "succes",
                             showConfirmButton: false,
-                            timer: 1500,
-                            ruta: ''
+                            timer: 900,
+                            ruta: 'Teachers'
                         });
                     }
                     if (results[0].privilege == 'admin') {
@@ -171,8 +190,8 @@ app.post('/auth', (req, res)=>{
                             alertMessage: "¡Login correcto!",
                             alertIcon: "succes",
                             showConfirmButton: false,
-                            timer: 1500,
-                            ruta: ''
+                            timer: 900,
+                            ruta: 'land'
                         });
                     }
 
@@ -261,14 +280,14 @@ app.post('/addStudent', (req, res)=>{
     connection.query("INSERT INTO USERS (user_id, name_user, passwor, privilege) VALUES(" + user_dni + ", '" + usr + "', " + dni + ", '" + privilege + "')", (error, results) =>{
         if(error){
             console.log("El error que devolvió SQL es: " + error);
-            return res.render('ADMIN-Students', {
+            return res.render('ADMIN-AddStudent', {
                 alert: true,
                 alertTitle: "Error",
                 alertMessage: "El DNI ya se encuentra registrado en el sistema",
                 alertIcon: "error",
                 showConfirmButton: true,
                 timer: 1200,
-                ruta: '#AS-Add'
+                ruta: ''
             })
         }
     })
@@ -287,35 +306,171 @@ app.post('/addStudent', (req, res)=>{
             console.log("El error que devolvió SQL es: " + error);
             connection.query('DELETE FROM STUDENTS WHERE user_id =', [dni]);
             connection.query('DELETE FROM USERS WHERE user_id =', [dni]);
-            return res.render('ADMIN-Students', {
+            return res.render('ADMIN-AddStudent', {
                 alert: true,
                 alertTitle: "Error",
                 alertMessage: "El DNI ya se encuentra registrado en el sistema",
                 alertIcon: "error",
                 showConfirmButton: true,
                 timer: 1200,
-                ruta: '#AS-Add'
+                ruta: ''
             })
         }
         else{
             console.log("Carga Exitosa");
             req.session.Sadded = true;
-                return res.render('ADMIN-Students', {
-                    alert: true,
-                    alertTitle: "Carga Exitosa",
-                    alertMessage: "¡Se agregó el Alumno correctamente!",
-                    alertIcon: "succes",
-                    showConfirmButton: false,
-                    timer: 1500,
-                    ruta: '#AS-Add'
-                });
+            return res.render('ADMIN-AddStudent', {
+                alert: true,
+                alertTitle: "Carga Exitosa",
+                alertMessage: "¡Se agregó el Alumno correctamente!",
+                alertIcon: "succes",
+                showConfirmButton: false,
+                timer: 1500,
+                ruta: 'Admin%Add%Student'
+            });
         }
     })
 });
 
+
+app.post('/RemoveStudent', (req, res)=>{
+    dni = parseInt(req.body.search);
+    console.log('--------------------------')
+    console.log(dni)
+    if(dni == null || dni == undefined){
+        return res.render('ADMIN-RemoveStudent', {
+            alert: true,
+            alertTitle: "Campo vacío",
+            alertMessage: "Ingrese un DNI",
+            alertIcon: "warning",
+            showConfirmButton: true,
+            timer: 1200,
+            ruta: ''
+        })
+    }
+    console.log(connection.query('SELECT dni FROM Students WHERE dni = ?', [dni], (error, results) =>{}))
+    connection.query('DELETE FROM Students WHERE dni = ?', [dni], (error, results) =>{
+        console.log(results);
+        if(error){
+            console.log("El error que devolvió SQL es: " + error);
+            return res.render('ADMIN-RemoveStudent', {
+                alert: true,
+                alertTitle: "Error",
+                alertMessage: "El DNI es incorrecto o no se encuentra en el sistema",
+                alertIcon: "error",
+                showConfirmButton: true,
+                timer: 1200,
+                ruta: 'Admin%Remove%Student'
+            })
+        }
+        else{
+            console.log("Eliminación Exitosa");
+            return res.render('ADMIN-RemoveStudent', {
+                alert: true,
+                alertTitle: "Eliminación exitosa",
+                alertMessage: "¡El estudiante se borró correctamente!",
+                alertIcon: "success",
+                showConfirmButton: false,
+                timer: 1500,
+                ruta: 'Admin%Remove%Student'
+            });
+        }
+    })
+})
+
+// 14 - ADMIN | Tecahers
+app.post('/addTeacher', (req, res)=>{
+    const Tname = String(req.body.add_name);
+    const dni = req.body.add_dni;
+    const addres = String(req.body.add_addres);
+    const gender = String(req.body.add_gender);
+    const surname = String(req.body.add_surname);
+    const birthday = String(req.body.add_date);
+    const descrip = req.body.Add_descr;
+    const privilege = String("Teacher");
+
+
+    console.log('');
+    console.log('--------------------------------');
+    console.log("Tname: " + Tname);
+    console.log("dni: " + dni);
+    console.log("addres: " + addres);
+    console.log("gender: " + gender);
+    console.log("surname: " + surname);
+    console.log("birthday: " + birthday);
+    console.log('');
+    console.log('--------------------------------');
+    console.log('INSERT INTO Teachers (name_s, surname, dni, birthday, address, gender, id_course, id_divi, user_id) VALUES(' + "'" + Tname + "', '" + surname + "', " + dni + ", '" + birthday + "', '" + addres + ", '" + gender + "', '" + descrip + "', " + dni + ');');
+    console.log('--------------------------------');
+    console.log('');
+
+    const user_dni = dni;
+    const name_usr = String(Tname);
+    const surname_usr = String(surname);
+    const dni_usr = String(dni);
+    var usr = name_usr[0].toLowerCase() + surname_usr[0].toLowerCase() + dni_usr;
+    
+    connection.query("INSERT INTO USERS (user_id, name_user, passwor, privilege) VALUES(" + user_dni + ", '" + usr + "', " + dni + ", '" + privilege + "')", (error, results) =>{
+        if(error){
+            console.log("El error que devolvió SQL es: " + error);
+            return res.render('ADMIN-Teachers', {
+                alert: true,
+                alertTitle: "Error",
+                alertMessage: "El DNI ya se encuentra registrado en el sistema",
+                alertIcon: "error",
+                showConfirmButton: true,
+                timer: 1200,
+                ruta: ''
+            })
+        }
+    })
+    if(gender == "M"){
+        const imgProfile = 'resources/Assets/Photo-MS.png';
+    }
+
+    else{
+        if(gender == "F"){
+            const imgProfile = 'resources/Assets/Photo-WS.png';
+        }
+    }
+    connection.query('INSERT INTO Teachers (name_t, surname, dni, birthday, address, gender, descrip, user_id) VALUES(' 
+    + "'" + Tname + "', '" + surname + "', " + dni + ", '" + birthday + "', '" + addres + "', '" + gender + "', '" + descrip + "', " + dni + ');', (error, results) =>{
+        if(error){ 
+            console.log("El error que devolvió SQL es: " + error);
+            connection.query('DELETE FROM TeacherS WHERE user_id =', [dni]);
+            connection.query('DELETE FROM USERS WHERE user_id =', [dni]);
+            return res.render('ADMIN-Teachers', {
+                alert: true,
+                alertTitle: "Error",
+                alertMessage: "El DNI ya se encuentra registrado en el sistema",
+                alertIcon: "error",
+                showConfirmButton: true,
+                timer: 1200,
+                ruta: ''
+            })
+        }
+        else{
+            console.log("Carga Exitosa");
+            req.session.Sadded = true;
+            return res.render('ADMIN-AddTeacher', {
+                alert: true,
+                alertTitle: "Carga Exitosa",
+                alertMessage: "¡Se agregó el Profesor correctamente!",
+                alertIcon: "succes",
+                showConfirmButton: false,
+                timer: 1500,
+                ruta: 'Admin%Add%Teacher'
+            });
+        }
+    })
+});
+
+// RE
+
+
 app.get('/', (req, res)=>{
     if(req.session.Sadded){
-        return res.render('ADMIN-Students', {
+        return res.render('ADMIN-AddStudents', {
             added: true,
             name: req.session.name
         });

@@ -53,7 +53,7 @@
     
         <!- PERFIL ->
         <div id="profile">
-          <div id="photo"><img src="resources/Assets/ayrton.png" alt="Usuario"></div>
+          <div id="photo"><img src="resources/Assets/01-ADMIN.png" alt="Usuario"></div>
           <div id="name">
             <span>ADMIN</span>
             <div class="icon-edit">
@@ -69,7 +69,7 @@
           <div class="item">
             <a href="Admin%Students" id="Btn0">
               <div class="icon first-icon">
-                <img src="resources/Assets/add-usr.png" alt="Materias">
+                <img src="resources/Assets/10-HOME.png" alt="Materias">
               </div>
               <div class="title">
                 <span>Home</span>
@@ -137,15 +137,14 @@
             <span class="Edit-tittle">EDITAR ALUMNO</span>
             <div class="Edit-t-container">
                 <div class="Edit-l-container">
-
                     <div class="group-name">
-                        <span class="Edit-span name-txt">Nombre:</span>
-                        <input class="edit_name" name="edit_name" type="text" placeholder="Ingrese el/los Nombres" required>
+                      <span class="Edit-span name-txt">Nombre:</span>
+                      <input class="edit_name" name="edit_name" type="text" placeholder="Ingrese el/los Nombres" required>
                     </div>
 
-                    <div class="group-dni">
-                        <span class="Edit-span dni-txt">DNI:</span>
-                        <input class="edit_dni" name="edit_dni" type="number" placeholder="Ingrese el DNI" required>
+                    <div class="group-surname">
+                      <span class="Edit-span surname-txt">Apellido:</span>
+                      <input class="edit_surname" name="edit_surname" type="text" placeholder="Ingrese el/los Apellidos" required>
                     </div>
 
                     <div class="group-addres">
@@ -163,9 +162,10 @@
                 </div>
 
                 <div class="Edit-r-container">
-                    <div class="group-surname">
-                        <span class="Edit-span surname-txt">Apellido:</span>
-                        <input class="edit_surname" name="edit_surname" type="text" placeholder="Ingrese el/los Apellidos" required>
+                    <div class="group-search">
+                      <div class="divEdit-span"><span class="Edit-span name-txt">DNI:</span></div>
+                      <input class="edit_name" name="edit_name" type="search" placeholder="Ingrese el DNI" required>
+                      <button>Buscar</button>
                     </div>
 
                     <div class="group-date">
@@ -221,6 +221,23 @@
           window.location='/<%= ruta %>'
         })
       </script>
+      <script>
+        Swal.fire({
+          title: '¿Estás seguro de hacer estos cambios?',
+          showDenyButton: true,
+          showCancelButton: true,
+          confirmButtonText: 'Guardar',
+          denyButtonText: `No Guardar`,
+        }).then((result) => {
+          /* Read more about isConfirmed, isDenied below */
+          if (result.isConfirmed) {
+            Swal.fire('¡Guardado!', '', 'success')
+          } else if (result.isDenied) {
+            Swal.fire('Los cambios no se guardaron', '', 'info')
+          }
+        })
+      </script>
       <% } %>
 </body>
 </html>
+
